@@ -193,6 +193,13 @@ public:
   void get_filenames(std::string (&bod)[2], std::string (&rots)[4][2]) const;
 
   /*!
+ *  \brief Zwraca promien okregu rzutowany przez dron na plaszczyzne XY       
+ *  \return liczba typu double reprezentujaca promien okregu o minimalnym promieniu ktory 
+ *          moze byc uzyty jako rzutowanie drona na plaszczyzne                                            
+ */
+  double get_drone_radius() const;
+
+  /*!
  *  \brief Metoda rysujaca drona w gnuplocie. Przeznaczona do testow                                                                                    
  *     \post Wyswietla okienko gnuplota z wyrysowanym dronem                                 
  */
@@ -324,6 +331,7 @@ public:
  *  \brief Wypisuje pozycje (x,y) obiektu                                                    
  */
   void print_pos() const override;
+
 
 
 };

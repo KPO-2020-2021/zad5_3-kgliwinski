@@ -200,6 +200,13 @@ double Drone::get_body_height() const
     return body.get_height();
 }
 
+double Drone::get_drone_radius() const
+{
+    double res = body.get_basis_diagonal_len()*0.5;
+    res += rotors[0].get_basis_diagonal_len()*0.5;
+    return res;
+}
+
 bool Drone::check_orien() const
 {
     if (!(abs(drone_orient.get_len() - 1.0) <= 0.00001))
@@ -390,7 +397,7 @@ bool Drone::Drone_basic_motion(double const &angle, double const &len, PzG::Lacz
         return 0;
     std::cout << "Naciśnij ENTER, aby narysowac sciezke" << std::endl;
     std::cin.ignore(100000, '\n');
-        std::cin.ignore(100000, '\n');
+    std::cin.ignore(100000, '\n');
     if (!Drone_path_to_file(cur_path, "../datasets/sciezka.dat", Lacze))
         return 0;
     std::cout << "Naciśnij ENTER, aby wykonac animacje przelotu" << std::endl;
@@ -525,7 +532,7 @@ bool Drone::Drone_make_path_roundabout(double const &radius, std::vector<Vector3
         return 0;
     double posi[3];
     drone_pos.get_vec(posi);
-    posi[3] = 80;
+    posi[2] = 80;
     Vector3D tmp(posi);
     double tab[3] = {0, 0, 1};
     Vector3D rise(tab);
@@ -575,7 +582,6 @@ void Drone::print_name() const
 void Drone::print_pos() const
 {
     Vector3D cen = body.get_basis_centre();
-    std::cout<<"("<< std::setw(2) << std::fixed << std::setprecision(2) <<cen[0];
-    std::cout<<", "<< std::setw(2) << std::fixed << std::setprecision(2) <<cen[1]<<") ";
+    std::cout << "(" << std::setw(2) << std::fixed << std::setprecision(2) << cen[0];
+    std::cout << ", " << std::setw(2) << std::fixed << std::setprecision(2) << cen[1] << ") ";
 }
-

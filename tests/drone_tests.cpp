@@ -315,6 +315,11 @@ TEST_CASE("D 4.05: Drone rotation 5")
 TEST_CASE("D 5.01: Drone::get_body_height()")
 {
     Drone a,b;
-    Matrix3D mat;
     CHECK (a.get_body_height() == 5);
+}
+
+TEST_CASE("D 5.01: Drone::get_drone_radius()")
+{
+    Drone a;
+    CHECK (abs(a.get_drone_radius() -19.1244047484) < 0.001); //sprawdzone recznie
 }

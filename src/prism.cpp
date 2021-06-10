@@ -120,6 +120,12 @@ double Prism::get_height() const
     return res;
 }
 
+double Prism::get_basis_diagonal_len() const
+{
+    Vector3D diag = tops[0][3] - tops[0][0];
+    return diag.get_len();
+}
+
 bool Prism::operator==(const Prism &pri) const
 {
     int i, j;

@@ -236,6 +236,12 @@ void Cuboid::get_cub(double (&tab)[2][4][3]) const
     }
 }
 
+double Cuboid::get_basis_diagonal_len() const
+{
+    Vector3D halfdiag = tops[0][0] - get_basis_centre();
+    return 2*halfdiag.get_len();
+}
+
 double Cuboid::get_height() const
 {
     double res;

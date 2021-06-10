@@ -608,6 +608,27 @@ TEST_CASE("C 5.03: Cuboid:get_vec_opp i check_vec_opp 3")
 }
 
 
+TEST_CASE("C 5.04: Cuboid::get_basis_diagonal_len 1"){
+    Cuboid a;
+    CHECK(abs(a.get_basis_diagonal_len() - sqrt(2))<0.00001);
+}
+
+TEST_CASE("C 5.05: Cuboid::get_basis_diagonal_len 2"){
+    Cuboid a;
+    double tab[3] = {2,2,5};
+    Vector3D sca(tab);
+    a = a.scale_cub(sca);
+    CHECK(abs(a.get_basis_diagonal_len() - 2)<0.00001);
+}
+
+TEST_CASE("C 5.05: Cuboid::get_basis_diagonal_len 3"){
+    Cuboid a;
+    double tab[3] = {2,2,34134};
+    Vector3D sca(tab);
+    a = a.scale_cub(sca);
+    CHECK(abs(a.get_basis_diagonal_len() - 2)<0.00001);
+}
+
 TEST_CASE("C 6.01: Cuboid::check_cub 1"){
     Cuboid a;
     CHECK(a.check_cub());
@@ -728,6 +749,7 @@ out2<<"2.0000000000 0.0000000000 0.0000000000 \n";
 
   CHECK (out.str() == out2.str());
 }
+
 
 TEST_CASE("C 7.01: Cuboid::special_points() 1")
 {

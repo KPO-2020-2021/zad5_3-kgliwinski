@@ -166,6 +166,12 @@ public:
    void get_cub(double (&tab)[2][4][3]) const;
 
    /*!
+ *  \brief Metoda zwracajaca dlugosc przekatnej podstawy prostopadloscianu     
+ *  \return dlugosc przekatnej                             
+ */
+double get_basis_diagonal_len() const;
+
+   /*!
  *  \brief Metoda zwracajaca wysokosc prostopadloscianu    
  *      \param[out] res - wysokosc                          
  */

@@ -458,61 +458,83 @@ TEST_CASE("P 2.06: get_pri przeciazenie dla double neg ")
      }
 }
 
-
 TEST_CASE("P 2.07: get_height 1")
 {
-Prism a;
-CHECK (a.get_height() == 1);
+     Prism a;
+     CHECK(a.get_height() == 1);
 }
 
 TEST_CASE("P 2.08: get_special_points 1")
 {
-Prism a;
-Vector3D cuts[2], cen;
-a.get_special_points(cuts,cen);
-double tab1[3] = {0,0,-0.5};
-double tab2[3] = {0,0,0.5};
-double tab3[3] = {0,0,0};
-Vector3D res1(tab1), res2(tab2), cen1(tab3);
-CHECK(res1 == cuts[0]);
-CHECK(res2 == cuts[1]);
-CHECK(cen == cen1);
+     Prism a;
+     Vector3D cuts[2], cen;
+     a.get_special_points(cuts, cen);
+     double tab1[3] = {0, 0, -0.5};
+     double tab2[3] = {0, 0, 0.5};
+     double tab3[3] = {0, 0, 0};
+     Vector3D res1(tab1), res2(tab2), cen1(tab3);
+     CHECK(res1 == cuts[0]);
+     CHECK(res2 == cuts[1]);
+     CHECK(cen == cen1);
 }
 
 TEST_CASE("P 2.09: get_special_points 2")
 {
-Prism a;
-double sca[3] = {1,1,1};
-a.set_scale(sca);
-a = a.scale_pri();
-Vector3D cuts[2], cen;
-a.get_special_points(cuts,cen);
-double tab1[3] = {0,0,-0.5};
-double tab2[3] = {0,0,0.5};
-double tab3[3] = {0,0,0};
-Vector3D res1(tab1), res2(tab2), cen1(tab3);
-CHECK(res1 == cuts[0]);
-CHECK(res2 == cuts[1]);
-CHECK(cen == cen1);
+     Prism a;
+     double sca[3] = {1, 1, 1};
+     a.set_scale(sca);
+     a = a.scale_pri();
+     Vector3D cuts[2], cen;
+     a.get_special_points(cuts, cen);
+     double tab1[3] = {0, 0, -0.5};
+     double tab2[3] = {0, 0, 0.5};
+     double tab3[3] = {0, 0, 0};
+     Vector3D res1(tab1), res2(tab2), cen1(tab3);
+     CHECK(res1 == cuts[0]);
+     CHECK(res2 == cuts[1]);
+     CHECK(cen == cen1);
 }
 
 TEST_CASE("P 2.10: get_special_points 3")
 {
-Prism a;
-double sca[3] = {3,3,3};
-a.set_scale(sca);
-a = a.scale_pri();
-Vector3D cuts[2], cen;
-a.get_special_points(cuts,cen);
-double tab1[3] = {0,0,-1.5};
-double tab2[3] = {0,0,1.5};
-double tab3[3] = {0,0,0};
-Vector3D res1(tab1), res2(tab2), cen1(tab3);
-CHECK(res1 == cuts[0]);
-CHECK(res2 == cuts[1]);
-CHECK(cen == cen1);
+     Prism a;
+     double sca[3] = {3, 3, 3};
+     a.set_scale(sca);
+     a = a.scale_pri();
+     Vector3D cuts[2], cen;
+     a.get_special_points(cuts, cen);
+     double tab1[3] = {0, 0, -1.5};
+     double tab2[3] = {0, 0, 1.5};
+     double tab3[3] = {0, 0, 0};
+     Vector3D res1(tab1), res2(tab2), cen1(tab3);
+     CHECK(res1 == cuts[0]);
+     CHECK(res2 == cuts[1]);
+     CHECK(cen == cen1);
 }
 
+TEST_CASE("P 2.11: Prism::get_basis_diagonal_len 1")
+{
+     Prism a;
+     CHECK(abs(a.get_basis_diagonal_len() - 2) < 0.00001);
+}
+
+TEST_CASE("P 2.12: Prism::get_basis_diagonal_len 2")
+{
+     Prism a;
+     double tab[3] = {2, 2, 5};
+     Vector3D sca(tab);
+     a = a.scale_pri(sca);
+     CHECK(abs(a.get_basis_diagonal_len() - 4) < 0.00001);
+}
+
+TEST_CASE("P 2.13: Prism::get_basis_diagonal_len 3")
+{
+     Prism a;
+     double tab[3] = {2, 2, 141245};
+     Vector3D sca(tab);
+     a = a.scale_pri(sca);
+     CHECK(abs(a.get_basis_diagonal_len() - 4) < 0.00001);
+}
 
 TEST_CASE("P 3.01: Prism::translation() 1")
 {
@@ -852,15 +874,13 @@ TEST_CASE("P 6.02: Prism::scale_pri() 2")
      CHECK(pri == b);
 }
 
-
-
 TEST_CASE("P 6.03: Prism::scale_pri() 3")
 {
      Prism a;
      double tab[3] = {0.1, 0.1, 0.1};
      int i;
      Vector3D top[2][6];
-     double iter[6][3] = {{0.1, 0, -0.05}, {0.05, 0.1*sqrt(3) * 0.5, -0.05}, {-0.05, sqrt(3) * 0.05, -0.05}, {-0.1, 0, -0.05}, {-0.05, -sqrt(3) * 0.05, -0.05}, {0.05, -sqrt(3) * 0.05, -0.05}};
+     double iter[6][3] = {{0.1, 0, -0.05}, {0.05, 0.1 * sqrt(3) * 0.5, -0.05}, {-0.05, sqrt(3) * 0.05, -0.05}, {-0.1, 0, -0.05}, {-0.05, -sqrt(3) * 0.05, -0.05}, {0.05, -sqrt(3) * 0.05, -0.05}};
      for (i = 0; i < 6; ++i)
      {
           top[0][i] = Vector3D(iter[i]);
@@ -873,7 +893,6 @@ TEST_CASE("P 6.03: Prism::scale_pri() 3")
 
      CHECK(pri == b);
 }
-
 
 TEST_CASE("P 6.04: Prism::scale_pri(Vector3D) 1")
 {
@@ -905,15 +924,13 @@ TEST_CASE("P 6.05: Prism::scale_pri(Vector3D) 2")
      CHECK(pri == b);
 }
 
-
-
 TEST_CASE("P 6.06: Prism::scale_pri(Vector3D) 3")
 {
      Prism a;
      double tab[3] = {0.1, 0.1, 0.1};
      int i;
      Vector3D top[2][6];
-     double iter[6][3] = {{0.1, 0, -0.05}, {0.05, 0.1*sqrt(3) * 0.5, -0.05}, {-0.05, sqrt(3) * 0.05, -0.05}, {-0.1, 0, -0.05}, {-0.05, -sqrt(3) * 0.05, -0.05}, {0.05, -sqrt(3) * 0.05, -0.05}};
+     double iter[6][3] = {{0.1, 0, -0.05}, {0.05, 0.1 * sqrt(3) * 0.5, -0.05}, {-0.05, sqrt(3) * 0.05, -0.05}, {-0.1, 0, -0.05}, {-0.05, -sqrt(3) * 0.05, -0.05}, {0.05, -sqrt(3) * 0.05, -0.05}};
      for (i = 0; i < 6; ++i)
      {
           top[0][i] = Vector3D(iter[i]);
@@ -922,7 +939,8 @@ TEST_CASE("P 6.06: Prism::scale_pri(Vector3D) 3")
      }
      Prism pri(top);
      Vector3D s(tab);
-     Prism b = a.scale_pri(s);;
+     Prism b = a.scale_pri(s);
+     ;
 
      CHECK(pri == b);
 }
@@ -933,19 +951,19 @@ TEST_CASE("P 7.01 [ASERCJE]: Prism get_vec_ver() i check_vec_ver() 1")
      int i;
      Vector3D tab[6];
      a.get_vec_ver(tab);
-     double tab_res[3] = {0,0,1};
+     double tab_res[3] = {0, 0, 1};
      Vector3D res[6];
-     for (i=0;i<6;++i)
+     for (i = 0; i < 6; ++i)
      {
           res[i] = Vector3D(tab_res);
      }
 
-     for (i=0;i<6;++i)
+     for (i = 0; i < 6; ++i)
      {
-          CHECK (res[i] == tab[i]);
+          CHECK(res[i] == tab[i]);
      }
-     CHECK (a.check_vec_ver());
-     CHECK (a.check_pri());
+     CHECK(a.check_vec_ver());
+     CHECK(a.check_pri());
 }
 
 TEST_CASE("P 7.02 [ASERCJE]: Prism get_vec_ver() i check_vec_ver() 2")
@@ -953,22 +971,22 @@ TEST_CASE("P 7.02 [ASERCJE]: Prism get_vec_ver() i check_vec_ver() 2")
      Prism a;
      int i;
      Vector3D tab[6];
-     double trans[3] = {124,124124,12343};
+     double trans[3] = {124, 124124, 12343};
      a = a.translation(Vector3D(trans));
      a.get_vec_ver(tab);
-     double tab_res[3] = {0,0,1};
+     double tab_res[3] = {0, 0, 1};
      Vector3D res[6];
-     for (i=0;i<6;++i)
+     for (i = 0; i < 6; ++i)
      {
           res[i] = Vector3D(tab_res);
      }
 
-     for (i=0;i<6;++i)
+     for (i = 0; i < 6; ++i)
      {
-          CHECK (res[i] == tab[i]);
+          CHECK(res[i] == tab[i]);
      }
-     CHECK (a.check_vec_ver());
-     CHECK (a.check_pri());
+     CHECK(a.check_vec_ver());
+     CHECK(a.check_pri());
 }
 
 TEST_CASE("P 7.03 [ASERCJE]: Prism get_vec_ver() i check_vec_ver() 3")
@@ -976,187 +994,187 @@ TEST_CASE("P 7.03 [ASERCJE]: Prism get_vec_ver() i check_vec_ver() 3")
      Prism a;
      int i;
      Vector3D tab[6];
-     double trans[3] = {124,124124,12343};
+     double trans[3] = {124, 124124, 12343};
      a = a.translation(Vector3D(trans));
      Matrix3D rot;
      rot = rot.rotation_matrix(60, 'x');
      a = a.rotation_around_cen(rot);
      a.get_vec_ver(tab);
-     double tab_res[3] = {0,0,1};
+     double tab_res[3] = {0, 0, 1};
      Vector3D res[6];
-     for (i=0;i<6;++i)
+     for (i = 0; i < 6; ++i)
      {
           res[i] = Vector3D(tab_res);
      }
 
-     for (i=0;i<6;++i)
+     for (i = 0; i < 6; ++i)
      {
-          CHECK (res[i] == tab[i]);
+          CHECK(res[i] == tab[i]);
      }
-     CHECK (a.check_vec_ver());
-     CHECK (a.check_pri());
+     CHECK(a.check_vec_ver());
+     CHECK(a.check_pri());
 }
 
 TEST_CASE("P 7.04 [ASERCJE]: Prism get_vec_ver() i check_vec_ver() 4")
 {
      Prism a;
-     double scale_tab[3] = {100,100,100};
+     double scale_tab[3] = {100, 100, 100};
      a.set_scale(scale_tab);
      a = a.scale_pri();
      int i;
      Vector3D tab[6];
-     double trans[3] = {124,124124,12343};
+     double trans[3] = {124, 124124, 12343};
      a = a.translation(Vector3D(trans));
      Matrix3D rot;
 
      a.get_vec_ver(tab);
-     double tab_res[3] = {0,0,100};
+     double tab_res[3] = {0, 0, 100};
      Vector3D res[6];
-     for (i=0;i<6;++i)
+     for (i = 0; i < 6; ++i)
      {
           res[i] = Vector3D(tab_res);
      }
 
-     for (i=0;i<6;++i)
+     for (i = 0; i < 6; ++i)
      {
-          CHECK (res[i] == tab[i]);
+          CHECK(res[i] == tab[i]);
      }
-     CHECK (a.check_vec_ver());
-     CHECK (a.check_pri());
+     CHECK(a.check_vec_ver());
+     CHECK(a.check_pri());
 }
 
 TEST_CASE("P 7.05 [ASERCJE]: Prism get_vec_ver() i check_vec_ver() 5")
 {
      Prism a;
-     double scale_tab[3] = {100,100,100};
+     double scale_tab[3] = {100, 100, 100};
      a.set_scale(scale_tab);
      a = a.scale_pri();
      int i;
      Vector3D tab[6];
-     double trans[3] = {124,124124,12343};
+     double trans[3] = {124, 124124, 12343};
      a = a.translation(Vector3D(trans));
      Matrix3D rot;
 
      a.get_vec_ver(tab);
-     double tab_res[3] = {0,0,100};
+     double tab_res[3] = {0, 0, 100};
      Vector3D res[6];
-     for (i=0;i<6;++i)
+     for (i = 0; i < 6; ++i)
      {
           res[i] = Vector3D(tab_res);
      }
 
-     for (i=0;i<6;++i)
+     for (i = 0; i < 6; ++i)
      {
-          CHECK (res[i] == tab[i]);
+          CHECK(res[i] == tab[i]);
      }
-     CHECK (a.check_vec_ver());
-     CHECK (a.check_pri());
+     CHECK(a.check_vec_ver());
+     CHECK(a.check_pri());
 }
 
 TEST_CASE("P 7.06 [ASERCJE]: check_vec_ver() 1 - with rotation")
 {
      Prism a;
-     double scale_tab[3] = {100,100,100};
+     double scale_tab[3] = {100, 100, 100};
      a.set_scale(scale_tab);
      a = a.scale_pri();
-     double trans[3] = {124,124124,12343};
+     double trans[3] = {124, 124124, 12343};
      a = a.translation(Vector3D(trans));
      Matrix3D rot;
      rot = rot.rotation_matrix(60, 'x');
      a = a.rotation_around_cen(rot);
-     CHECK (a.check_vec_ver());
-     CHECK (a.check_pri());
+     CHECK(a.check_vec_ver());
+     CHECK(a.check_pri());
 }
 
 TEST_CASE("P 7.07 [ASERCJE]: check_vec_ver() 2 - with rotation")
 {
      Prism a;
-     double scale_tab[3] = {1410,1410,1410};
+     double scale_tab[3] = {1410, 1410, 1410};
      a.set_scale(scale_tab);
      a = a.scale_pri();
-     double trans[3] = {-124,124124,-12343};
+     double trans[3] = {-124, 124124, -12343};
      a = a.translation(Vector3D(trans));
      Matrix3D rot;
      rot = rot.rotation_matrix(60, 'x');
      rot = rot.rotation_matrix(0, 'y');
      a = a.rotation_around_cen(rot);
-     CHECK (a.check_vec_ver());
-     CHECK (a.check_pri());
+     CHECK(a.check_vec_ver());
+     CHECK(a.check_pri());
 }
 
 TEST_CASE("P 7.08 [ASERCJE]: check_vec_ver() 3 - with rotation")
 {
      Prism a;
-     double scale_tab[3] = {100,100,100};
+     double scale_tab[3] = {100, 100, 100};
      a.set_scale(scale_tab);
      a = a.scale_pri();
-     double trans[3] = {124,124124,12343};
+     double trans[3] = {124, 124124, 12343};
      a = a.translation(Vector3D(trans));
      Matrix3D rot;
      rot = rot.rotation_matrix(60, 'x');
      rot = rot * rot.rotation_matrix(1241, 'y');
      rot = rot * rot.rotation_matrix(-27163, 'z');
      a = a.rotation_around_cen(rot);
-     CHECK (a.check_vec_ver());
-     CHECK (a.check_pri());
+     CHECK(a.check_vec_ver());
+     CHECK(a.check_pri());
 }
 
 TEST_CASE("P 7.09 [ASERCJE]: get_vec_pairs() i check_vec_pairs 1")
 {
-     int i,j;
+     int i, j;
      Prism a;
      Vector3D vec[2][3][2];
      a.get_vec_pairs(vec);
      Vector3D tmp[3];
-     double tab[3][3] = {{-0.5,sqrt(3)*0.5,0},{-1,0,0},{-0.5,-sqrt(3)*0.5,0}};
-     for (i=0;i<3;++i)
+     double tab[3][3] = {{-0.5, sqrt(3) * 0.5, 0}, {-1, 0, 0}, {-0.5, -sqrt(3) * 0.5, 0}};
+     for (i = 0; i < 3; ++i)
      {
           tmp[i] = Vector3D(tab[i]);
      }
-     for(i=0;i<2;++i)
-    {
-        for(j=0;j<3;++j)
-        {
-            CHECK(vec[i][j][0] == tmp[j]);
-            CHECK(vec[i][j][1] == tmp[j]*(-1));
-        }
-    }
-     CHECK (a.check_vec_pairs());
-     CHECK (a.check_pri());
+     for (i = 0; i < 2; ++i)
+     {
+          for (j = 0; j < 3; ++j)
+          {
+               CHECK(vec[i][j][0] == tmp[j]);
+               CHECK(vec[i][j][1] == tmp[j] * (-1));
+          }
+     }
+     CHECK(a.check_vec_pairs());
+     CHECK(a.check_pri());
 }
 
 TEST_CASE("P 7.10 [ASERCJE]: get_vec_pairs() i check_vec_pairs 2")
 {
-     int i,j;
+     int i, j;
      Prism a;
-     double tr[3] = {131224,4124.124,-2414};
+     double tr[3] = {131224, 4124.124, -2414};
      Vector3D trans(tr);
      a = a.translation(trans);
      Vector3D vec[2][3][2];
      a.get_vec_pairs(vec);
      Vector3D tmp[3];
-     double tab[3][3] = {{-0.5,sqrt(3)*0.5,0},{-1,0,0},{-0.5,-sqrt(3)*0.5,0}};
-     for (i=0;i<3;++i)
+     double tab[3][3] = {{-0.5, sqrt(3) * 0.5, 0}, {-1, 0, 0}, {-0.5, -sqrt(3) * 0.5, 0}};
+     for (i = 0; i < 3; ++i)
      {
           tmp[i] = Vector3D(tab[i]);
      }
-     for(i=0;i<2;++i)
-    {
-        for(j=0;j<3;++j)
-        {
-            CHECK(vec[i][j][0] == tmp[j]);
-            CHECK(vec[i][j][1] == tmp[j]*(-1));
-        }
-    }
-     CHECK (a.check_vec_pairs());
-     CHECK (a.check_pri());
+     for (i = 0; i < 2; ++i)
+     {
+          for (j = 0; j < 3; ++j)
+          {
+               CHECK(vec[i][j][0] == tmp[j]);
+               CHECK(vec[i][j][1] == tmp[j] * (-1));
+          }
+     }
+     CHECK(a.check_vec_pairs());
+     CHECK(a.check_pri());
 }
 
 TEST_CASE("P 7.11 [ASERCJE]: get_vec_pairs() i check_vec_pairs 3")
 {
-     int i,j;
+     int i, j;
      Prism a;
-     double tr[3] = {131224,4124.124,-2414};
+     double tr[3] = {131224, 4124.124, -2414};
      Vector3D trans(tr);
      a = a.translation(trans);
      Matrix3D rot;
@@ -1166,21 +1184,21 @@ TEST_CASE("P 7.11 [ASERCJE]: get_vec_pairs() i check_vec_pairs 3")
      Vector3D vec[2][3][2];
      a.get_vec_pairs(vec);
      Vector3D tmp[3];
-     double tab[3][3] = {{-0.5,sqrt(3)*0.5,0},{-1,0,0},{-0.5,-sqrt(3)*0.5,0}};
-     for (i=0;i<3;++i)
+     double tab[3][3] = {{-0.5, sqrt(3) * 0.5, 0}, {-1, 0, 0}, {-0.5, -sqrt(3) * 0.5, 0}};
+     for (i = 0; i < 3; ++i)
      {
           tmp[i] = Vector3D(tab[i]);
      }
-     for(i=0;i<2;++i)
-    {
-        for(j=0;j<3;++j)
-        {
-            CHECK(vec[i][j][0] == tmp[j]);
-            CHECK(vec[i][j][1] == tmp[j]*(-1));
-        }
-    }
-     CHECK (a.check_vec_pairs());
-     CHECK (a.check_pri());
+     for (i = 0; i < 2; ++i)
+     {
+          for (j = 0; j < 3; ++j)
+          {
+               CHECK(vec[i][j][0] == tmp[j]);
+               CHECK(vec[i][j][1] == tmp[j] * (-1));
+          }
+     }
+     CHECK(a.check_vec_pairs());
+     CHECK(a.check_pri());
 }
 
 TEST_CASE("P 8.01 : Prism::print_prism_3D() oraz Prism::read_prism_3D()")
@@ -1192,13 +1210,13 @@ TEST_CASE("P 8.01 : Prism::print_prism_3D() oraz Prism::read_prism_3D()")
      Prism b;
      b = a.Prism_From_Sample();
 
-     CHECK (a==b);
+     CHECK(a == b);
 }
 
 TEST_CASE("P 8.02 : Prism::print_prism_3D() oraz Prism::read_prism_3D() 2")
 {
      Prism a;
-     double tab[3] = {100,100,100};
+     double tab[3] = {100, 100, 100};
      Vector3D sc(tab);
      a = a.scale_pri(sc);
      a.set_sample_name("../tests/test_datasets/test_pri2.dat");
@@ -1207,13 +1225,13 @@ TEST_CASE("P 8.02 : Prism::print_prism_3D() oraz Prism::read_prism_3D() 2")
      Prism b;
      b = a.Prism_From_Sample();
 
-     CHECK (a==b);
+     CHECK(a == b);
 }
 
 TEST_CASE("P 8.03 : Prism::print_prism_3D() oraz Prism::read_prism_3D() 3")
 {
      Prism a;
-     double tab[3] = {100,100,100};
+     double tab[3] = {100, 100, 100};
      Vector3D sc(tab);
      a = a.scale_pri(sc);
      a = a.translation(sc);
@@ -1223,13 +1241,13 @@ TEST_CASE("P 8.03 : Prism::print_prism_3D() oraz Prism::read_prism_3D() 3")
      Prism b;
      b = a.Prism_From_Sample();
 
-     CHECK (a==b);
+     CHECK(a == b);
 }
 
 TEST_CASE("P 8.04 : Prism::print_prism_3D() oraz Prism::read_prism_3D() 4")
 {
      Prism a;
-     double tab[3] = {100,100,100};
+     double tab[3] = {100, 100, 100};
      Vector3D sc(tab);
      a = a.scale_pri(sc);
      a = a.translation(sc);
@@ -1243,20 +1261,20 @@ TEST_CASE("P 8.04 : Prism::print_prism_3D() oraz Prism::read_prism_3D() 4")
      Prism b;
      b = a.Prism_From_Sample();
 
-     CHECK (a==b);
+     CHECK(a == b);
 }
 
 TEST_CASE("P 8.05 : Prism::print_prism_3D() oraz Prism::read_prism_3D() 5")
 {
      Prism a;
-     double tab[3] = {100,100,100};
+     double tab[3] = {100, 100, 100};
      Vector3D sc(tab);
      a = a.scale_pri(sc);
      a = a.translation(sc);
      Matrix3D mat;
      mat = mat.rotation_matrix(5132, 'x');
      mat = mat.rotation_matrix(124, 'y') * mat;
-     for(int i=0;i<100;++i)
+     for (int i = 0; i < 100; ++i)
           a = a.rotation_around_cen(mat);
      a.set_sample_name("../tests/test_datasets/test_pri5.dat");
      a.Prism_To_File(a.get_sample_name());
@@ -1264,5 +1282,5 @@ TEST_CASE("P 8.05 : Prism::print_prism_3D() oraz Prism::read_prism_3D() 5")
      Prism b;
      b = a.Prism_From_Sample();
 
-     CHECK (a==b);
+     CHECK(a == b);
 }
