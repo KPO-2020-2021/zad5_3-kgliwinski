@@ -213,3 +213,9 @@ TEST_CASE("B 3.08: check_block 8")
 
     CHECK(!a.check_block());
 }
+
+TEST_CASE("B 4.01 Block::get_type()")
+{
+    Block a;
+    CHECK (a.get_type() == -1);
+}

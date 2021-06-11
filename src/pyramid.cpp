@@ -74,3 +74,8 @@ void Pyramid::print_name() const
 {
     std::cout<<"Piramida \n";
 }
+
+int Pyramid::get_type() const
+{
+    return 1;
+}

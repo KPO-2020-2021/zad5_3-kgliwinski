@@ -132,3 +132,9 @@ TEST_CASE("Py 2.03: Pyramid::centre_point() 3")
 
     CHECK(a.centre_point() == res);
 }
+
+TEST_CASE("Py 2.04: Cuboid::get_type()")
+{
+    Pyramid a;
+    CHECK (a.get_type() == 1);
+}

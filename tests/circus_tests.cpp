@@ -160,3 +160,9 @@ CHECK(res1 == cuts[0]);
 CHECK(res2 == cuts[1]);
 CHECK(cen == cen1);
 }
+
+TEST_CASE("Ci 1.07: Circus::get_type()")
+{
+    Circus a;
+    CHECK (a.get_type() == 4);
+}

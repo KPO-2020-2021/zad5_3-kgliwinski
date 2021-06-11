@@ -282,3 +282,9 @@ TEST_CASE("Te 4.03: Tent::special_points() 3")
     CHECK(cut[0] == cut1);
     CHECK(cut[1] == cut2);
 }
+
+TEST_CASE("Te 4.04: Tent::get_type()")
+{
+    Tent a;
+    CHECK (a.get_type() == 5);
+}

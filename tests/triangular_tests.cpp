@@ -1,7 +1,7 @@
 #include "../tests/doctest/doctest.h"
 #include "../include/triangular.hpp"
 
-TEST_CASE("Py 1.01: konstruktor bezparametryczny piramid i przeciazenie operatora <<")
+TEST_CASE("Tr 1.01: konstruktor bezparametryczny piramid i przeciazenie operatora <<")
 {
     //double tab[2][2] = {{3,1}};
     Triangular a;
@@ -27,14 +27,14 @@ TEST_CASE("Py 1.01: konstruktor bezparametryczny piramid i przeciazenie operator
     CHECK(out.str() == out2.str());
 }
 
-TEST_CASE("Py 1.02: operator == dla klasy Cuboid")
+TEST_CASE("Tr 1.02: operator == dla klasy Cuboid")
 {
     Triangular a, b;
 
     CHECK(a == b);
 }
 
-TEST_CASE("Py 1.03: operator == dla klasy Cuboid false")
+TEST_CASE("Tr 1.03: operator == dla klasy Cuboid false")
 {
     Triangular a;
     Triangular b;
@@ -45,7 +45,7 @@ TEST_CASE("Py 1.03: operator == dla klasy Cuboid false")
     CHECK(!(a == b));
 }
 
-TEST_CASE("Py 1.04: Triangular::scale()")
+TEST_CASE("Tr 1.04: Triangular::scale()")
 {
     Triangular a, b;
     double tab[3] = {1, 1, 1};
@@ -58,7 +58,7 @@ TEST_CASE("Py 1.04: Triangular::scale()")
     CHECK(a == b);
 }
 
-TEST_CASE("Py 1.05: Triangular::scale() 2")
+TEST_CASE("Tr 1.05: Triangular::scale() 2")
 {
     Triangular a;
     double tab[3] = {2, 2, 2};
@@ -77,7 +77,7 @@ TEST_CASE("Py 1.05: Triangular::scale() 2")
     CHECK(a == b);
 }
 
-TEST_CASE("Py 1.06: Triangular::get_basis_centre() 1")
+TEST_CASE("Tr 1.06: Triangular::get_basis_centre() 1")
 {
     Triangular a;
     double tab[3] = {0.5,0.5,0};
@@ -87,7 +87,7 @@ TEST_CASE("Py 1.06: Triangular::get_basis_centre() 1")
     CHECK(a.get_height() == 1);
 }
 
-TEST_CASE("Py 1.07: Triangular::get_basis_centre() 2")
+TEST_CASE("Tr 1.07: Triangular::get_basis_centre() 2")
 {
     Triangular a;
     double tab2[3] = {0,0,-1};
@@ -100,7 +100,7 @@ TEST_CASE("Py 1.07: Triangular::get_basis_centre() 2")
     CHECK(a.get_height() == 2);
 }
 
-TEST_CASE("Py 2.01: Triangular::centre_point() 1")
+TEST_CASE("Tr 2.01: Triangular::centre_point() 1")
 {
     Triangular a;
     double tab[3] = {0.5,0.5,0.5};
@@ -109,7 +109,7 @@ TEST_CASE("Py 2.01: Triangular::centre_point() 1")
     CHECK(a.centre_point() == res);
 }
 
-TEST_CASE("Py 2.02: Triangular::centre_point() 2")
+TEST_CASE("Tr 2.02: Triangular::centre_point() 2")
 {
     Triangular a;
     double scal[3] = {1,2,3};
@@ -121,7 +121,7 @@ TEST_CASE("Py 2.02: Triangular::centre_point() 2")
     CHECK(a.centre_point() == res);
 }
 
-TEST_CASE("Py 2.03: Triangular::centre_point() 3")
+TEST_CASE("Tr 2.03: Triangular::centre_point() 3")
 {
     Triangular a;
     double sca[3] = {1,2,3};
@@ -133,4 +133,10 @@ TEST_CASE("Py 2.03: Triangular::centre_point() 3")
     Vector3D res(tab);
 
     CHECK(a.centre_point() == res);
+}
+
+TEST_CASE("Tr 2.04: Cuboid::get_type()")
+{
+    Triangular a;
+    CHECK (a.get_type() == 2);
 }

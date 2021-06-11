@@ -53,3 +53,8 @@ void Circus::print_name() const
 {
     std::cout<<"Cyrk \n";
 }
+
+int Circus::get_type() const
+{
+    return 4;
+}

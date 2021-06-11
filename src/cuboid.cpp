@@ -609,3 +609,8 @@ void Cuboid::switch_pos(const double &x, const double &y)
     *this = this->translation(tran);
     Cuboid_To_File(final_name);
 }
+
+int Cuboid::get_type() const
+{
+    return 3;
+}

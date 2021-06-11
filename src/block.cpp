@@ -94,3 +94,8 @@ void Block::switch_pos(const double &x, const double &y)
 {
     std::cout<<"Brak metody"<<x<<" "<<y<<"\n";
 }
+
+int Block::get_type() const
+{
+    return -1;
+}

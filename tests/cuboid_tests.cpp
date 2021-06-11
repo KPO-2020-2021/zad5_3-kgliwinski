@@ -621,6 +621,12 @@ TEST_CASE("C 5.05: Cuboid::get_basis_diagonal_len 2"){
     CHECK(abs(a.get_basis_diagonal_len() - 2)<0.00001);
 }
 
+TEST_CASE("D 5.06: Cuboid::get_type()")
+{
+    Cuboid a;
+    CHECK (a.get_type() == 3);
+}
+
 TEST_CASE("C 5.05: Cuboid::get_basis_diagonal_len 3"){
     Cuboid a;
     double tab[3] = {2,2,34134};

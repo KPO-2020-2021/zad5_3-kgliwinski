@@ -310,6 +310,11 @@ Vector3D get_pos() const override;
  *          \param[in] x oraz \param[in] y                                                  
  */
 void switch_pos(const double &x, const double &y) override;
+
+     /*!
+ *  \return 3 dla Cuboid                                                   
+ */
+  int get_type() const override;
 };
 
 /*!

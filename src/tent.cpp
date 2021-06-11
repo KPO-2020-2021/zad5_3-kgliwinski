@@ -67,3 +67,8 @@ void Tent::print_name() const
 {
     std::cout<<"Namiot \n";
 }
+
+int Tent::get_type() const
+{
+    return 5;
+}

@@ -318,8 +318,14 @@ TEST_CASE("D 5.01: Drone::get_body_height()")
     CHECK (a.get_body_height() == 5);
 }
 
-TEST_CASE("D 5.01: Drone::get_drone_radius()")
+TEST_CASE("D 5.02: Drone::get_drone_radius()")
 {
     Drone a;
     CHECK (abs(a.get_drone_radius() -19.1244047484) < 0.001); //sprawdzone recznie
+}
+
+TEST_CASE("D 5.03: Drone::get_type()")
+{
+    Drone a;
+    CHECK (a.get_type() == 0);
 }

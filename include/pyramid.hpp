@@ -72,4 +72,8 @@ public:
  */
    void print_name() const override;
 
+  /*!
+ *  \return 1 dla Pyramid                                                   
+ */
+  int get_type() const override;
 };

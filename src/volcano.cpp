@@ -72,3 +72,8 @@ void Volcano::print_name() const
 {
     std::cout<<"Wulkan \n";
 }
+
+int Volcano::get_type() const
+{
+    return 6;
+}

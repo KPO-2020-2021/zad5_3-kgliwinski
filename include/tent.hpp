@@ -68,4 +68,9 @@ public:
  *  \brief Zwraca nazwe obiektu                                                    
  */
   void print_name() const override;
+
+    /*!
+ *  \return 5 dla Tent                                                  
+ */
+  int get_type() const override;
 };

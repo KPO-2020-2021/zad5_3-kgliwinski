@@ -332,6 +332,9 @@ public:
  */
   void print_pos() const override;
 
-
+  /*!
+ *  \return 0 dla Drone                                                    
+ */
+  int get_type() const override;
 
 };

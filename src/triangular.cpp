@@ -57,3 +57,8 @@ void Triangular::print_name() const
 {
     std::cout<<"Gora z grania \n";
 }
+
+int Triangular::get_type() const
+{
+    return 2;
+}

@@ -282,3 +282,9 @@ TEST_CASE("Vo 4.03: Volcano::special_points() 3")
     CHECK(cut[0] == cut1);
     CHECK(cut[1] == cut2);
 }
+
+TEST_CASE("Ci 4.04: Volcano::get_type()")
+{
+    Volcano a;
+    CHECK (a.get_type() == 6);
+}
