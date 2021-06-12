@@ -678,3 +678,36 @@ TEST_CASE("V 13.05: scale_vec 5")
     CHECK (a == res);
 }
 
+TEST_CASE("V 14.01: translation 1")
+{
+    double tab1[3] = {1,1,1};
+    Vector3D v1(tab1);
+    double tab2[3] = {2,2,2};
+    Vector3D v2(tab2);
+    double r[3] = {3,3,3};
+    Vector3D res(r);
+    CHECK (res == v1.translation(v2));
+}
+
+
+TEST_CASE("V 14.02: translation 2")
+{
+    double tab1[3] = {100,101,102};
+    Vector3D v1(tab1);
+    double tab2[3] = {2,2,2};
+    Vector3D v2(tab2);
+    double r[3] = {102,103,104};
+    Vector3D res(r);
+    CHECK (res == v1.translation(v2));
+}
+
+TEST_CASE("V 14.03: translation 3")
+{
+    double tab1[3] = {100,101,102};
+    Vector3D v1(tab1);
+    double tab2[3] = {0,-1,-2};
+    Vector3D v2(tab2);
+    double r[3] = {100,100,100};
+    Vector3D res(r);
+    CHECK (res == v1.translation(v2));
+}

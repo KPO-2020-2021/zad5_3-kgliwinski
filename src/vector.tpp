@@ -110,8 +110,8 @@ template <typename type, unsigned int SIZE>
 Vector<type, SIZE> Vector<type, SIZE>::scale_vec(const Vector &vec) const
 {
     unsigned int i;
-    Vector res=*this;
-    for (i=0;i<SIZE;++i)
+    Vector res = *this;
+    for (i = 0; i < SIZE; ++i)
     {
         res[i] *= vec[i];
     }
@@ -176,4 +176,28 @@ type Vector<type, SIZE>::scalar_prod(Vector<type, SIZE> const &vec) const
         res += size[i] * vec.size[i];
     }
     return res;
+}
+
+template <typename type, unsigned int SIZE>
+Vector<type, SIZE> Vector<type, SIZE>::translation(const Vector<type, SIZE> &vec) const
+{
+    return *this + vec;
+}
+
+template <typename type, unsigned int SIZE>
+int Vector<type, SIZE>::get_quarter() const
+{
+    if (SIZE < 2)
+        return 0;
+    double tab[SIZE];
+    this->get_vec(tab);
+    if (tab[0] >= 0 && tab[1] >= 0)
+        return 1;
+    else if (tab[0] <= 0 && tab[1] >= 0)
+        return 2;
+    else if (tab[0] <= 0 && tab[1] <= 0)
+        return 3;
+    else if (tab[0] >= 0 && tab[1] <= 0)
+        return 4;
+    return 0;
 }

@@ -327,8 +327,51 @@ public:
   void print_pos() const override;
 
   /*!
+ *  \brief Zwraca pozycje srodka podstawy body                                                  
+ */
+  Vector3D get_pos() const override;
+
+  /*!
+ *  \brief Zwraca rzutowanie pozycje srodka podstawy body na XY                                               
+ */
+  Vector3D get_pos_pro() const;
+
+  /*!
  *  \return 0 dla Drone                                                    
  */
   int get_type() const override;
 
+  /*!
+ *  \brief Methoda sprawdzajaca czy rzutowanie drona na plaszczyzne XY \n
+ *         przecina sie z rzutowaniem prostopadloscianu cub
+ *  \param[in] cub - prostopadloscian dla ktorego sprawdzamy
+ *  \retval true - jesli sie przecina, false w przeciwnym wypadku                                                     
+ */
+  bool check_intersection(const Cuboid &cub) const;
+
+  /*!
+ *  \brief Methoda uzywana przy check_intersection() przesuwajaca i rotujaca caly uklad
+ *  \param[in] vec - wierzcholki rzutowania prostopadloscianu
+ *  \param[in] pro - srodek okregu bedacego rzutowaniem drona na XY
+ *  \post przypisuje vec i pro nowe wartosci, zgodnie z opisem                                                    
+ */
+  void new_coordinate_system_intersection(std::vector<Vector3D> &vec, Vector3D &pro) const;
+
+  /*!
+ *  \brief Methoda powieksza rzutowana figure o radius w odpowiedni sposob
+ *  \param[in] vec - wierzcholki rzutowania prostopadloscianu
+ *  \param[in] vec_cop - kopia vec
+ *  \param[in] rad - promien okregu bedacego rzutowaniem drona na XY
+ *  \post przypisuje vec nowe wartosci, zgodnie z opisem                                                    
+ */
+  void enlargen_by_rad(double const &rad, std::vector<Vector3D> &vec, std::vector<Vector3D> &vec_cop ) const;
+
+  /*!
+ *  \brief Methoda sprawdza czy punkt 0,0,0 miesci sie w powiekszonym przez metode \n
+ *         enlargen_by_rad obszarze w odopwiedni sposob
+ *  \param[in] vec - wierzcholki rzutowania prostopadloscianu
+ *  \param[in] vec_cop - kopia vec
+ *  \return jesli sie miesci, false w przeciwnym wypadku                                                   
+ */
+  bool main_check(std::vector<Vector3D> &vec,  std::vector<Vector3D> &vec_cop) const;
 };

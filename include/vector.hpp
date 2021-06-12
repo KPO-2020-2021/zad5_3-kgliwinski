@@ -2,7 +2,7 @@
 #include <iostream>
 #include <cmath>
 #include <iomanip>
-#include"count.hpp"
+#include "count.hpp"
 
 constexpr double PI = 3.14159265;
 /*!
@@ -16,18 +16,18 @@ constexpr double PI = 3.14159265;
  *  \brief Opisuje wektor o SIZE-wierszach
  */
 
-template <typename type, unsigned int SIZE> 
-class Vector: public Count<Vector<type,SIZE>> {
+template <typename type, unsigned int SIZE>
+class Vector : public Count<Vector<type, SIZE>>
+{
 
 private:
-/*!
+    /*!
  * \brief Tablica wektora
  */
-    type size[SIZE];     
+    type size[SIZE];
 
 public:
-
-/*!
+    /*!
  *  \brief Konstruktor klasy Vector.        
                                         
  *  Argumenty:                                                               
@@ -37,17 +37,16 @@ public:
  */
     Vector();
 
-/*!
+    /*!
  *  \brief Konstruktor klasy Vector.                                                
  *  Argumenty:                                                               
  *      \param[in] tmp - Jednowymiarowa tablica typu zz.                            
  *  Zwraca:                                                                  
  *      \param[in] this - Tablice wypelniona wartosciami podanymi w argumencie.                
  */
-    Vector(type [SIZE]);
+    Vector(type[SIZE]);
 
-
-/*!
+    /*!
  *  \brief Realizuje dodawanie dwoch wektorow.                                      
  *  Argumenty:                                                               
  *      \param[in] this - pierwszy skladnik dodawania,                                  
@@ -56,9 +55,9 @@ public:
  *      \param[out] result - Sume dwoch skladnikow przekazanych jako wskaznik                     
  *      na parametr.                                                         
  */
-    Vector operator + (const Vector &v) const;
+    Vector operator+(const Vector &v) const;
 
-/*!
+    /*!
  *  \brief Realizuje odejmowanie dwoch wektorow.                                    
  *  Argumenty:                                                               
  *      \param[in] this - pierwszy skladnik odejmowania,                                
@@ -67,9 +66,9 @@ public:
  *      \param[in] result - Roznice dwoch skladnikow przekazanych jako wskaznik                  
  *      na parametr.                                                         
  */
-    Vector operator - (const Vector &v) const;
+    Vector operator-(const Vector &v) const;
 
-/*!
+    /*!
  *  \brief Realizuje mnozenie wektora przez liczbe zmiennoprzecinkowa.              
  *  Argumenty:                                                               
  *      \param[in] this - pierwszy skladnik mnozenia (wektor),                          
@@ -78,9 +77,9 @@ public:
  *      \param[in] result - Iloczyn dwoch skladnikow przekazanych jako wskaznik                  
  *      na parametr.                                                         
  */
-    Vector operator * (const type &tmp) const;
+    Vector operator*(const type &tmp) const;
 
-/*!
+    /*!
  *  \brief Realizuje dzielenie dwoch wektorow.                                      
  *  Argumenty:                                                               
  *      \param[in] this - licznik dzielenia,                                            
@@ -89,9 +88,9 @@ public:
  *      \param[in] result - Iloraz dwoch skladnikow przekazanych jako wskaznik                   
  *      na parametr.                                                         
  */
-    Vector operator / (const type &tmp) const;
+    Vector operator/(const type &tmp) const;
 
-/*!
+    /*!
  *  \brief Sprawdza czy wektory sa rowne                                      
  *  Argumenty:                                                               
  *      \param[in] this - l,                                            
@@ -100,9 +99,9 @@ public:
  *     \retval true - sa rowne
  *     \retval false - nie sa rowne                                                        
  */
-    bool operator == (const Vector &v) const;
+    bool operator==(const Vector &v) const;
 
-/*!
+    /*!
  *  \brief Skaluje wektor o inny wektors                                     
  *  Argumenty:                                                               
  *      \param[in] vec - wektor przez ktory ma zostac przeskalowany
@@ -114,7 +113,7 @@ public:
 
     Vector rotate(const type &theta) const; //2D rotation
 
-/*!
+    /*!
  * \brief Zwraca kwadrat modulu wektora                                             
  * Argumenty:                                                                
  *      Brak                                                                 
@@ -123,7 +122,7 @@ public:
  */
     type modulus2() const;
 
-/*!
+    /*!
  * \brief Zwraca wektor do tablicy o rozmiarze SIZE                                           
  * Argumenty:                                                                
  *      \param[in] tab - tablica do ktorej wypisywany jest wektor                                                                 
@@ -132,7 +131,14 @@ public:
  */
     void get_vec(type (&tab)[SIZE]) const;
 
-/*!
+    /*!
+ * Translacja Vector3D o inny Vector
+ * \param[in] vec - wektor translacji
+ * \return przesuniety wektor poczatkowy                                                  
+ */
+    Vector translation(const Vector &vec) const;
+
+    /*!
  * \brief Zwraca dlugosc wektora                                                    
  * Argumenty:                                                                
  *      Brak                                                                 
@@ -141,35 +147,40 @@ public:
  */
     type get_len() const;
 
-    type get_slope_angle() const;   //2D rotation
+    type get_slope_angle() const; //2D rotation
 
-/*!
+    /*!
+ * \brief Zwraca cwiartke w ktorej znajduje sie wektor                                                                                                                                                                
+ *      \return 1 - pierwsza cwiartka, 2 - druga cwiartka itd                                                     
+ */
+    int get_quarter() const;
+
+    /*!
  *  \brief Funktor wektora.                                                         
  *  Argumenty:                                                               
  *      \param[in] index - index wektora.                                               
  *  Zwraca:                                                                  
  *      \param[out] size - Wartosc wektora w danym miejscu tablicy jako stala.                  
  */
-    const type &operator [] (unsigned int index) const;
+    const type &operator[](unsigned int index) const;
 
-/*!
+    /*!
  *  \brief Funktor wektora.                                                         
  *  Argumenty:                                                               
  *      \param[in] index - index wektora.                                               
  *  Zwraca:                                                                  
  *      \param[out] Vector - Wartosc wektora w danym miejscu tablicy.                             
  */
-    type &operator [] (unsigned int index);
+    type &operator[](unsigned int index);
 
-
-/*!
+    /*!
  *  \brief Iloczyn skalarny wektorow                                                        
  *  Argumenty:                                                               
  *      \param[in] vec - drugi wektor do porownania                                              
  *  Zwraca:                                                                  
  *      \param[out] res - wynik iloczynu skalarnego                           
  */
-    type scalar_prod(Vector const & vec) const;
+    type scalar_prod(Vector const &vec) const;
 };
 
 /*!
@@ -180,8 +191,8 @@ public:
  *  Zwraca:
  *      \param[out] out - strumien wyjsciowy                                                     
  */
-template <typename type, unsigned int SIZE> 
-std::ostream &operator << (std::ostream &out, Vector<type,SIZE> const &tmp);
+template <typename type, unsigned int SIZE>
+std::ostream &operator<<(std::ostream &out, Vector<type, SIZE> const &tmp);
 
 /*!
  *  \brief Przeciazenie operatora >>                                                
@@ -191,8 +202,7 @@ std::ostream &operator << (std::ostream &out, Vector<type,SIZE> const &tmp);
  *  Zwraca:
  *      \param[out] in - strumien wejsciowy                                                     
  */
-template <typename type, unsigned int SIZE> 
-std::istream &operator >> (std::istream &in, Vector<type,SIZE> &tmp);
+template <typename type, unsigned int SIZE>
+std::istream &operator>>(std::istream &in, Vector<type, SIZE> &tmp);
 
-
-#include"../src/vector.tpp"
+#include "../src/vector.tpp"

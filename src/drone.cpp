@@ -202,8 +202,8 @@ double Drone::get_body_height() const
 
 double Drone::get_drone_radius() const
 {
-    double res = body.get_basis_diagonal_len()*0.5;
-    res += rotors[0].get_basis_diagonal_len()*0.5;
+    double res = body.get_basis_diagonal_len() * 0.5;
+    res += rotors[0].get_basis_diagonal_len() * 0.5;
     return res;
 }
 
@@ -581,7 +581,87 @@ void Drone::print_pos() const
     std::cout << ", " << std::setw(2) << std::fixed << std::setprecision(2) << cen[1] << ") ";
 }
 
+Vector3D Drone::get_pos() const
+{
+    return body.get_basis_centre();
+}
+
+Vector3D Drone::get_pos_pro() const
+{
+    Vector3D tmp = get_pos();
+    double tab[3];
+    tmp.get_vec(tab);
+    tab[2] = 0;
+    return Vector3D(tab);
+}
+
 int Drone::get_type() const
 {
     return 0;
+}
+
+bool Drone::check_intersection(const Cuboid &cub) const
+{
+    long unsigned int i;
+    std::vector<Vector3D> vec;
+    cub.get_basis_pro(vec);
+    if (!cub.get_basis_pro(vec))
+        return 0;
+    double rad = this->get_drone_radius();
+    Vector3D pro = this->get_pos_pro();
+    for (i = 0; i < vec.size(); ++i)
+    {
+        if ((pro - vec[i]).get_len() <= rad) //sprawdzenie odleglosci od wierzcholkow
+            return 0;
+    }
+    new_coordinate_system_intersection(vec, pro);
+    std::vector<Vector3D> vec_cop = vec;
+    enlargen_by_rad(rad,vec, vec_cop);
+    return main_check(vec,vec_cop);
+}
+
+void Drone::new_coordinate_system_intersection(std::vector<Vector3D> &vec, Vector3D &pro) const
+{
+    long unsigned int i;
+    Vector3D tmp = vec[1] - vec[0];
+    double ang = atan2(tmp[1], tmp[0]);
+    ang *= 180 / PI;
+    Matrix3D mat;
+    mat = mat.rotation_matrix(-ang, 'z');
+    for (i = 0; i < vec.size(); ++i)
+    {
+        vec[i] = vec[i].translation(pro * (-1)); // translacja do nowego ukladu wspolrzednych (srodek jest
+                                                 // srodkiem okregu bedacego rzutem drona na XY)
+        vec[i] = mat * vec[i];                   // obrot w taki sposob ze prostokat ustawiony jest rownolegle do osi XY
+    }
+    pro = Vector3D(); //{0,0,0}
+}
+
+void Drone::enlargen_by_rad(double const & rad, std::vector<Vector3D> &vec, std::vector<Vector3D> &vec_cop) const
+{
+    double tab_y[3] = {0, rad, 0};
+    double tab_x[3] = {rad, 0, 0};
+    Vector3D y(tab_y), x(tab_x);
+    vec[0] = vec[0] - tab_y;
+    vec_cop[0] = vec_cop[0] - tab_x;
+    vec[1] = vec[1] - tab_y;
+    vec_cop[1] = vec_cop[1] + tab_x;
+    vec[2] = vec[2] + tab_y;
+    vec_cop[2] = vec_cop[2] + tab_x;
+    vec[3] = vec[3] + tab_y;
+    vec_cop[1] = vec_cop[1] - tab_x;
+}
+
+bool Drone::main_check(std::vector<Vector3D> &vec, std::vector<Vector3D> &vec_cop) const
+{
+    long unsigned int i;
+    int tab[4] = {3,4,1,2};
+    for(i=0;i<4;++i)
+    {
+        if(vec[i].get_quarter() != tab[i])
+            return 0;
+        if(vec_cop[i].get_quarter() != tab[i])
+            return 0;
+    }
+    return 1;
 }
