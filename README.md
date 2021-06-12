@@ -1,12 +1,14 @@
-# Dragonfly 5.2
+# Dragonfly 5.3
 
-Below it is shown how the programme is structured and how it declares 3D geometric figures.
 
 ## Class diagram
 
 ![Class diagram](/readme_pics/class_diagram.png)
 
 To see more indepth diagrams and documentation go to /documentation dir.
+
+
+Below it is shown how the programme is structured and how it declares 3D geometric figures.
 
 ## Cuboid
 

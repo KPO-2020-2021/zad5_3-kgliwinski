@@ -168,7 +168,7 @@ public:
  *      \retval true - scena poprawnie zainicjowana
  *      \retval false - scena blednie zainicjowana
  */
-  bool check_scene();
+  bool check_scene() const;
 
   /*!
  *  \brief Przeciazenie operatora == dla klasy Scene    
@@ -207,7 +207,7 @@ public:
  *  \retval true - jesli operacja sie powiedzie
  *  \retval false - w przeciwnym wypadku
  */
-  bool iterate_over_objects(PzG::LaczeDoGNUPlota &Lacze);
+  bool iterate_over_objects(PzG::LaczeDoGNUPlota &Lacze) const;
 
   /*!
  * \brief Zwraca numer aktywnego drona
@@ -256,5 +256,5 @@ public:
   /*!
  * \brief Wyswietla aktywne elementy sceny wyboru obiektu
  */
-  void show_elements();
+  void show_elements() const;
 };

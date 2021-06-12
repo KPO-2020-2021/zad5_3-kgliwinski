@@ -118,11 +118,6 @@ public:
   bool set_drone_pos(Vector3D const &pos);
 
   /*!
- *  \brief Metoda wypisuje na standardowym wyjsciu pozycje drona (bez wysokosci)                               
- */
-  void print_drone_pos() const;
-
-  /*!
  *  \brief Metoda ustawiajaca skale wszystkich elementow drona                                         
  *      \param[in] bod - skala korpusu
  *      \param[in] rot - skala rotorow                                               

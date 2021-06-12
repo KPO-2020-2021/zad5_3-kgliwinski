@@ -273,7 +273,7 @@ int Scene::get_objects_size() const
     return objects.size();
 }
 
-bool Scene::check_scene()
+bool Scene::check_scene() const
 {
     unsigned int j;
     for (j = 0; j < SIZE; ++j)
@@ -282,7 +282,7 @@ bool Scene::check_scene()
             return 0;
     }
 
-    std::list<std::shared_ptr<Block>>::iterator i;
+    std::list<std::shared_ptr<Block>>::const_iterator i;
     for (i = objects.begin(); i != objects.end(); ++i)
     {
         if (!(i->get()->check_block()))
@@ -333,11 +333,11 @@ bool Scene::init_gnuplot(double const &x, double const &y, PzG::LaczeDoGNUPlota 
     return 1;
 }
 
-bool Scene::iterate_over_objects(PzG::LaczeDoGNUPlota &Lacze)
+bool Scene::iterate_over_objects(PzG::LaczeDoGNUPlota &Lacze) const
 {
     if (get_objects_size() == 0)
         return 0;
-    std::list<std::shared_ptr<Block>>::iterator i;
+    std::list<std::shared_ptr<Block>>::const_iterator i;
     i = objects.begin();
     std::advance(i, 2);
     for (; i != objects.end(); ++i)
@@ -359,15 +359,15 @@ unsigned int Scene::get_filename_num() const
 
 void Scene::print_active() const
 {
-    flies[active].get()->print_drone_pos();
+    flies[active].get()->print_pos();
 }
 void Scene::print_positions() const
 {
     std::cout << "1 - Polozenie (x,y): ";
-    flies[0].get()->print_drone_pos();
+    flies[0].get()->print_pos();
     std::cout << std::endl;
     std::cout << "2 - Polozenie (x,y): ";
-    flies[1].get()->print_drone_pos();
+    flies[1].get()->print_pos();
     std::cout << std::endl
               << std::endl;
 }
@@ -386,10 +386,10 @@ bool Scene::fly_roundabout(double const &radius, PzG::LaczeDoGNUPlota &Lacze)
     return 1;
 }
 
-void Scene::show_elements()
+void Scene::show_elements() const
 {
     int k = 1;
-    std::list<std::shared_ptr<Block>>::iterator i;
+    std::list<std::shared_ptr<Block>>::const_iterator i;
     i = objects.begin();
     std::advance(i, 2);
     for (; i != objects.end(); ++i)

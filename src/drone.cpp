@@ -569,11 +569,6 @@ bool Drone::Drone_make_path_roundabout(double const &radius, std::vector<Vector3
     return 1;
 }
 
-void Drone::print_drone_pos() const
-{
-    std::cout << drone_pos[0] << " " << drone_pos[1];
-}
-
 void Drone::print_name() const
 {
     std::cout << "Dron \n";
