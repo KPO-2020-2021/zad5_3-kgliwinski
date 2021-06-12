@@ -4,14 +4,21 @@ Scene::Scene(Vector3D const (&pos)[SIZE], Vector3D const (&scal_bod)[SIZE], Vect
              std::string const (&names_bod)[SIZE][2], std::string const (&names_rot)[SIZE][4][2])
 {
     unsigned int i;
+    Drone tmp[2];
     for (i = 0; i < SIZE; ++i)
     {
-        flies[i].set_drone_pos(pos[i]);
-        flies[i].set_scale_all(scal_bod[i], scal_rot[i]);
-        flies[i] = flies[i].scale_dro();
-        flies[i] = flies[i].translation_to_pos();
-        flies[i].setup_filenames(names_bod[i], names_rot[i]);
-        flies[i].set_rotors_in_place();
+        tmp[i].set_drone_pos(pos[i]);
+        tmp[i].set_scale_all(scal_bod[i], scal_rot[i]);
+        tmp[i] = tmp[i].scale_dro();
+        tmp[i] = tmp[i].translation_to_pos();
+        tmp[i].setup_filenames(names_bod[i], names_rot[i]);
+        tmp[i].set_rotors_in_place();
+    }
+    std::shared_ptr<Drone> a;
+    for(i=0;i<2;++i)
+    {
+        a = std::make_shared<Drone>(tmp[i]);
+        flies.push_back(a);
     }
     active = 0;
     filename_num = 0;
@@ -19,10 +26,8 @@ Scene::Scene(Vector3D const (&pos)[SIZE], Vector3D const (&scal_bod)[SIZE], Vect
 
 bool Scene::init_objects()
 {
-    std::shared_ptr<Drone> a = std::make_shared<Drone>(flies[0]);
-    objects.push_back(a);
-    a = std::make_shared<Drone>(flies[1]);
-    objects.push_back(a);
+    objects.push_back(flies[0]);
+    objects.push_back(flies[1]);
     return !objects.empty();
 }
 
@@ -273,7 +278,7 @@ bool Scene::check_scene()
     unsigned int j;
     for (j = 0; j < SIZE; ++j)
     {
-        if (!flies[j].check_dro())
+        if (!flies[j].get()->check_dro())
             return 0;
     }
 
@@ -291,7 +296,7 @@ bool Scene::operator==(const Scene &sce) const
     unsigned int i;
     for (i = 0; i < SIZE; ++i)
     {
-        if (!(flies[i] == sce.flies[i]))
+        if (!(*flies[i] == *sce.flies[i]))
             return 0;
     }
     return 1;
@@ -310,7 +315,7 @@ bool Scene::init_gnuplot(double const &x, double const &y, PzG::LaczeDoGNUPlota 
     unsigned int i;
     for (i = 0; i < SIZE; ++i)
     {
-        flies[i].set_filenames_gnuplot(Lacze);
+        flies[i].get()->set_filenames_gnuplot(Lacze);
     }
     Lacze.UstawZakresX(0, x);
     Lacze.UstawZakresY(0, y);
@@ -354,29 +359,29 @@ unsigned int Scene::get_filename_num() const
 
 void Scene::print_active() const
 {
-    flies[active].print_drone_pos();
+    flies[active].get()->print_drone_pos();
 }
 void Scene::print_positions() const
 {
     std::cout << "1 - Polozenie (x,y): ";
-    flies[0].print_drone_pos();
+    flies[0].get()->print_drone_pos();
     std::cout << std::endl;
     std::cout << "2 - Polozenie (x,y): ";
-    flies[1].print_drone_pos();
+    flies[1].get()->print_drone_pos();
     std::cout << std::endl
               << std::endl;
 }
 
 bool Scene::fly(double const &angle, double const &len, PzG::LaczeDoGNUPlota &Lacze)
 {
-    if (!flies[active].Drone_basic_motion(angle, len, Lacze))
+    if (!flies[active].get()->Drone_basic_motion(angle, len, Lacze))
         return 0;
     return 1;
 }
 
 bool Scene::fly_roundabout(double const &radius, PzG::LaczeDoGNUPlota &Lacze)
 {
-    if (!flies[active].Drone_roundabout(radius, Lacze))
+    if (!flies[active].get()->Drone_roundabout(radius, Lacze))
         return 0;
     return 1;
 }

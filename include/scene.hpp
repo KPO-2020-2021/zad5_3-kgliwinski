@@ -32,7 +32,7 @@ private:
   /*!
  * \brief Tablica dronow obslugiwanych w programie
  */
-  Drone flies[SIZE];
+ std::vector<std::shared_ptr<Drone>> flies;
   /*!
  * \brief Wskaznik na aktywnego drona. Wartosc koresponduje z ta
  *          z tablicy flies (drony sa numerowane w zakresie 0 , 1 , ... , (SIZE-1))
