@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
-#include <stdlib.h>
 #include <fstream>
+#include <stdlib.h>
 #include <unistd.h>
 #include <memory>
 #include "plane.hpp"
@@ -201,7 +201,7 @@ public:
 
   /*!
  * \brief Metoda iterujaca po kolejnych polach listy objects,
- *          zcyztujaca nazwy plikow i podajaca je do gnuplota
+ *          zczytujaca nazwy plikow i podajaca je do gnuplota
  *  \param[in] Lacze - aktywne LaczeDoGNUPlota
  *  \post Do Lacza trafiaja kolejne nazwy plikow
  *  \retval true - jesli operacja sie powiedzie

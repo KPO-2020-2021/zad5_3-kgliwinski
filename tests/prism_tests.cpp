@@ -1201,6 +1201,57 @@ TEST_CASE("P 7.11 [ASERCJE]: get_vec_pairs() i check_vec_pairs 3")
      CHECK(a.check_pri());
 }
 
+TEST_CASE("P 7.12: Prism::get_basis_pro() 1")
+{
+     int i;
+     Prism a;
+     std::vector<Vector3D> tab;
+     CHECK(a.get_basis_pro(tab));
+     Vector3D res[6];
+     double iter[6][3] = {{1, 0, -0.5}, {0.5, sqrt(3) * 0.5, -0.5}, {-0.5, sqrt(3) * 0.5, -0.5}, {-1, 0, -0.5}, {-0.5, -sqrt(3) * 0.5, -0.5}, {0.5, -sqrt(3) * 0.5, -0.5}};
+     for (i = 0; i < 6; ++i)
+     {
+          res[i] = Vector3D(iter[i]);
+          CHECK(tab[i] == res[i]);
+     }
+}
+
+TEST_CASE("P 7.13: Prism::get_basis_pro() 2")
+{
+     int i;
+     Prism a;
+     double tr[3] = {0, 0, -24};
+     Vector3D tran(tr);
+     a = a.translation(tran);
+     std::vector<Vector3D> tab;
+     CHECK(a.get_basis_pro(tab));
+     Vector3D res[6];
+     double iter[6][3] = {{1, 0, -0.5}, {0.5, sqrt(3) * 0.5, -0.5}, {-0.5, sqrt(3) * 0.5, -0.5}, {-1, 0, -0.5}, {-0.5, -sqrt(3) * 0.5, -0.5}, {0.5, -sqrt(3) * 0.5, -0.5}};
+     for (i = 0; i < 6; ++i)
+     {
+          res[i] = Vector3D(iter[i]);
+          CHECK(tab[i] == res[i]);
+     }
+}
+
+TEST_CASE("P 7.14: Prism::get_basis_pro() 3")
+{
+     int i;
+     Prism a;
+     double tr[3] = {0, 0, 24};
+     Vector3D tran(tr);
+     a = a.translation(tran);
+     std::vector<Vector3D> tab;
+     CHECK(a.get_basis_pro(tab));
+     Vector3D res[6];
+     double iter[6][3] = {{1, 0, -0.5}, {0.5, sqrt(3) * 0.5, -0.5}, {-0.5, sqrt(3) * 0.5, -0.5}, {-1, 0, -0.5}, {-0.5, -sqrt(3) * 0.5, -0.5}, {0.5, -sqrt(3) * 0.5, -0.5}};
+     for (i = 0; i < 6; ++i)
+     {
+          res[i] = Vector3D(iter[i]);
+          CHECK(tab[i] == res[i]);
+     }
+}
+
 TEST_CASE("P 8.01 : Prism::print_prism_3D() oraz Prism::read_prism_3D()")
 {
      Prism a;

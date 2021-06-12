@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <vector>
 #include <fstream>
 #include "vector3D.hpp"
 #include "matrix3D.hpp"
@@ -145,4 +146,11 @@ public:
  *   6 - Volcano                                                   
  */
    virtual int get_type() const;
+
+     /*!
+ *  \brief Metoda zwracajaca wierzcholki podstawy prostopadloscianu zrzutowane na plaszczyzne XY do tablicy                                                                                                       
+ *     \param[in] tab - tablica Vector3D[4]                                                                                                               
+ *     \post Zwraca cztery wierzcholki tops[0][0] - tops[0][3] zrzytowane na XY do tab                             
+ */
+  virtual bool get_basis_pro(std::vector<Vector3D> &vec) const;
 };

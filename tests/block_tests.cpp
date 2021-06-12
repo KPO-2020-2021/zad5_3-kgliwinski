@@ -214,8 +214,10 @@ TEST_CASE("B 3.08: check_block 8")
     CHECK(!a.check_block());
 }
 
-TEST_CASE("B 4.01 Block::get_type()")
+TEST_CASE("B 4.01 Block::get_type() i Block::get_basis_pro()")
 {
     Block a;
     CHECK (a.get_type() == -1);
+    std::vector<Vector3D> vec;
+    CHECK(!a.get_basis_pro(vec));
 }

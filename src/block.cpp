@@ -99,3 +99,8 @@ int Block::get_type() const
 {
     return -1;
 }
+
+bool Block::get_basis_pro(std::vector<Vector3D> &vec) const
+{
+    return !vec.empty();
+}

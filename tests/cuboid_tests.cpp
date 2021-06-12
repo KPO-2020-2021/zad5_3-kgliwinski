@@ -621,18 +621,70 @@ TEST_CASE("C 5.05: Cuboid::get_basis_diagonal_len 2"){
     CHECK(abs(a.get_basis_diagonal_len() - 2)<0.00001);
 }
 
-TEST_CASE("D 5.06: Cuboid::get_type()")
-{
-    Cuboid a;
-    CHECK (a.get_type() == 3);
-}
-
-TEST_CASE("C 5.05: Cuboid::get_basis_diagonal_len 3"){
+TEST_CASE("C 5.06: Cuboid::get_basis_diagonal_len 3"){
     Cuboid a;
     double tab[3] = {2,2,34134};
     Vector3D sca(tab);
     a = a.scale_cub(sca);
     CHECK(abs(a.get_basis_diagonal_len() - 2)<0.00001);
+}
+
+TEST_CASE("D 5.07: Cuboid::get_type()")
+{
+    Cuboid a;
+    CHECK (a.get_type() == 3);
+}
+
+TEST_CASE("D 5.08: Cuboid::get_basis_pro() 1")
+{
+    int i;
+    Cuboid a;
+    std::vector<Vector3D> tab;
+    CHECK(a.get_basis_pro(tab));
+    Vector3D res[4];
+    double iter[4][3] = {{0, 0, 0}, {1, 0, 0}, {1, 1, 0}, {0, 1, 0}};
+    for (i = 0; i < 4; ++i)
+    {
+        res[i] = Vector3D(iter[i]);
+        CHECK (tab[i] == res[i]);
+    }
+    
+}
+
+TEST_CASE("D 5.09: Cuboid::get_basis_pro() 2")
+{
+    int i;
+    Cuboid a;
+    double tr[3] = {0,0,24};
+    Vector3D tran(tr);
+    a = a.translation(tran);
+    std::vector<Vector3D> tab;
+    CHECK(a.get_basis_pro(tab));
+    Vector3D res[4];
+    double iter[4][3] = {{0, 0, 0}, {1, 0, 0}, {1, 1, 0}, {0, 1, 0}};
+    for (i = 0; i < 4; ++i)
+    {
+        res[i] = Vector3D(iter[i]);
+        CHECK (tab[i] == res[i]);
+    } 
+}
+
+TEST_CASE("D 5.10: Cuboid::get_basis_pro() 3")
+{
+    int i;
+    Cuboid a;
+    double tr[3] = {0,0,-24};
+    Vector3D tran(tr);
+    a = a.translation(tran);
+    std::vector<Vector3D> tab;
+    CHECK(a.get_basis_pro(tab));
+    Vector3D res[4];
+    double iter[4][3] = {{0, 0, 0}, {1, 0, 0}, {1, 1, 0}, {0, 1, 0}};
+    for (i = 0; i < 4; ++i)
+    {
+        res[i] = Vector3D(iter[i]);
+        CHECK (tab[i] == res[i]);
+    } 
 }
 
 TEST_CASE("C 6.01: Cuboid::check_cub 1"){

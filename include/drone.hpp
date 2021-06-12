@@ -3,7 +3,6 @@
 #include "cuboid.hpp"
 #include "lacze_do_gnuplota.hpp"
 #include <unistd.h>
-#include <vector>
 /*!
  * \file  drone.hpp
  *  

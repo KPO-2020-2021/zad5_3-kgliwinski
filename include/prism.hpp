@@ -112,6 +112,13 @@ public:
 double get_basis_diagonal_len() const;
 
   /*!
+ *  \brief Metoda zwracajaca wierzcholki podstawy prostopadloscianu zrzutowane na plaszczyzne XY do tablicy                                                                                                       
+ *     \param[in] vec - vector Vector3D                                                                                                              
+ *     \post Zwraca cztery wierzcholki tops[0][0] - tops[0][5] zrzytowane na XY do vec                           
+ */
+  bool get_basis_pro(std::vector<Vector3D> &vec) const override;
+
+  /*!
  *  \brief Metoda zwracajaca punkty specjalne graniastoslupa   
  *      \param[in] cut - tablica do ktorej zwracane sa punkty cuts
  *      \param[in] cen - tablica do ktorej zwracany jest centre                          

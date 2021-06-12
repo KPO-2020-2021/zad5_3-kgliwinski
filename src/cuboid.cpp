@@ -236,10 +236,28 @@ void Cuboid::get_cub(double (&tab)[2][4][3]) const
     }
 }
 
+bool Cuboid::get_basis_pro(std::vector<Vector3D> &vec) const
+{
+    if (&vec.front() != 0)
+        return 0;
+    int i;
+    double tmp[3];
+    Vector3D tab[4];
+    tmp[2] = 0;
+    for (i = 0; i < 4; ++i)
+    {
+        tmp[0] = tops[0][i][0];
+        tmp[1] = tops[0][i][1];
+        tab[i] = Vector3D(tmp);
+        vec.push_back(tab[i]);
+    }
+    return !vec.empty();
+}
+
 double Cuboid::get_basis_diagonal_len() const
 {
     Vector3D halfdiag = tops[0][0] - get_basis_centre();
-    return 2*halfdiag.get_len();
+    return 2 * halfdiag.get_len();
 }
 
 double Cuboid::get_height() const
