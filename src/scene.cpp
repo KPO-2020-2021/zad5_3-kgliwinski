@@ -397,30 +397,29 @@ bool Scene::fly(double const &angle, double const &len, PzG::LaczeDoGNUPlota &La
         return 0;
     std::list<std::shared_ptr<Block>>::const_iterator i;
     i = objects.begin();
-    int k, licz = 0;
+    int k;
     for (; i != objects.end(); ++i)
     {
-        licz++;
         k = i->get()->get_type();
         if (k >= 1 && k <= 3)
         {
             Cuboid *d = static_cast<Cuboid *>(i->get());
             if (!flies[active]->check_intersection(*d))
-                std::cout << licz << " cuboid\n";
+                std::cout << k;
         }
 
         else if (k >= 4 && k <= 6)
         {
             Prism *d = static_cast<Prism *>(i->get());
             if (!flies[active]->check_intersection(*d))
-                std::cout << "prism\n";
+                std::cout << k;
         }
         else if (k == 0)
         {
             Drone *d = static_cast<Drone *>(i->get());
             if (!(*d == *(flies[active].get())))
                 if (!flies[active]->check_intersection(*d))
-                    std::cout << "dron\n";
+                    std::cout << k;
         }
     }
 
