@@ -57,6 +57,7 @@ public:
  *     \post Inicjalizuje podstawowego drona                                  
  */
   Drone();
+  
   /*!
  *  \brief Metoda uzywana przy konstruowania drona
  *          Ustawia rotory w ten sposob, ze srodek ich dolnej
@@ -185,6 +186,13 @@ public:
  *     \return przypisuje argumentom odpowiednie wartosci                                 
  */
   void get_filenames(std::string (&bod)[2], std::string (&rots)[4][2]) const;
+
+
+  /*!
+ * \brief Metoda usuwajaca pliki drona
+ *      \post Usuwa pliki drona
+ */
+  void remove_files();
 
   /*!
  *  \brief Zwraca promien okregu rzutowany przez dron na plaszczyzne XY       

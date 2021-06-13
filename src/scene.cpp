@@ -26,6 +26,22 @@ Scene::Scene(Vector3D const (&pos)[SIZE], Vector3D const (&scal_bod)[SIZE], Vect
     filename_num = 0;
 }
 
+void Scene::delete_scene_files()
+{
+    remove("../datasets/main/sample/plane_sample.dat");
+    remove("../datasets/main/final/plane_final.dat");
+    std::list<std::shared_ptr<Block>>::const_iterator i;
+    i = objects.begin();
+    std::advance(i, 2);
+    for(;i!=objects.end();++i)
+    {
+        remove(i->get()->get_final_name().c_str());
+        remove(i->get()->get_sample_name().c_str());
+    }
+    flies[0].get()->remove_files();
+    flies[1].get()->remove_files();
+}
+
 bool Scene::init_objects()
 {
     objects.push_back(flies[0]);
@@ -108,6 +124,7 @@ bool Scene::delete_object(const unsigned int &num, PzG::LaczeDoGNUPlota &Lacze)
     std::string name = i->get()->get_final_name();
     if (!Lacze.UsunNazwePliku(name))
         return 0;
+    remove(name.c_str());
     objects.erase(i);
     return 1;
 }
@@ -380,7 +397,7 @@ bool Scene::fly(double const &angle, double const &len, PzG::LaczeDoGNUPlota &La
         return 0;
     std::list<std::shared_ptr<Block>>::const_iterator i;
     i = objects.begin();
-    int k,licz=0;
+    int k, licz = 0;
     for (; i != objects.end(); ++i)
     {
         licz++;
@@ -388,22 +405,22 @@ bool Scene::fly(double const &angle, double const &len, PzG::LaczeDoGNUPlota &La
         if (k >= 1 && k <= 3)
         {
             Cuboid *d = static_cast<Cuboid *>(i->get());
-            if(!flies[active]->check_intersection(*d))
-                    std::cout<<licz<<" cuboid\n";
+            if (!flies[active]->check_intersection(*d))
+                std::cout << licz << " cuboid\n";
         }
 
         else if (k >= 4 && k <= 6)
         {
             Prism *d = static_cast<Prism *>(i->get());
-            if(!flies[active]->check_intersection(*d))
-                    std::cout<<"prism\n";
+            if (!flies[active]->check_intersection(*d))
+                std::cout << "prism\n";
         }
         else if (k == 0)
         {
             Drone *d = static_cast<Drone *>(i->get());
             if (!(*d == *(flies[active].get())))
-                if(!flies[active]->check_intersection(*d))
-                    std::cout<<"dron\n";
+                if (!flies[active]->check_intersection(*d))
+                    std::cout << "dron\n";
         }
     }
 

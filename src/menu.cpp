@@ -140,6 +140,7 @@ void Menu::switch_menu(Scene &sc, PzG::LaczeDoGNUPlota &Lacze, const char &oper)
     {
         std::cout << "Koniec dzialania programu\n";
         open = 0;
+        sc.delete_scene_files();
         break;
     }
     default:

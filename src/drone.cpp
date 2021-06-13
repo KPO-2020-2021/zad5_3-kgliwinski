@@ -25,6 +25,19 @@ Drone::Drone()
     drone_angle = 0;
 }
 
+void Drone::remove_files()
+{
+    int i;
+    for (i = 0; i < 4; ++i)
+    {
+        remove(rotors[i].get_final_name().c_str());
+        remove(rotors[i].get_sample_name().c_str());
+    }
+    remove(body.get_final_name().c_str());
+    remove(body.get_sample_name().c_str());
+    remove("../datasets/sciezka.dat");
+}
+
 void Drone::set_rotors_in_place()
 {
     int i;
@@ -686,7 +699,7 @@ void Drone::enlargen_by_rad(double const &rad, std::vector<Vector3D> &vec, std::
 bool Drone::main_check(std::vector<Vector3D> &vec, std::vector<Vector3D> &vec_cop) const
 {
     long unsigned int i;
-    int tab[4] = {3,4,1,2};
+    int tab[4] = {3, 4, 1, 2};
     for (i = 0; i < 4; ++i)
     {
         if (vec[i].get_quarter() != tab[i])

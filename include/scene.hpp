@@ -65,6 +65,11 @@ public:
         std::string const (&names_bod)[SIZE][2], std::string const (&names_rot)[SIZE][4][2]);
 
   /*!
+ * \brief Usuwa pliki ktore jeszcze pozostaly w liscie objects oraz plik z plansza
+ */
+  void delete_scene_files();
+
+  /*!
  * \brief Metoda inicjujaca liste objects, dodajaca drony do listy
  *      \retval true - objects poprawnie zainicjowana
  *      \retval false - objects blednie zainicjowana
