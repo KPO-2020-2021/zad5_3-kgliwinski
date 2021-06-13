@@ -47,6 +47,11 @@ private:
  */
   Cuboid body;
 
+ /*!
+ * \brief Vector3D reprezentujacy sciezke przelotu drona
+ */
+  std::vector<Vector3D> path;
+
 public:
   /*!
  *  \brief Konstruktor bezparametryczny klasy Drone.
@@ -242,7 +247,7 @@ public:
  *     \retval true - jesli jest odpowiednio skonfigurowane lacze
  *     \retval false - w przeciwnym wypadku                             
  */
-  bool Drone_make_path(Vector3D const &tran, std::vector<Vector3D> &path);
+  bool Drone_make_path(Vector3D const &tran);
 
   /*!
  *  \brief Metoda zapisujaca sciezke do pliku oraz do lacza
@@ -253,7 +258,7 @@ public:
  *     \retval true - jesli zapis sie powiedzie
  *     \retval false - w przeciwnym wypadku                             
  */
-  bool Drone_path_to_file(std::vector<Vector3D> &path, std::string const &name, PzG::LaczeDoGNUPlota &Lacze);
+  bool Drone_path_to_file(std::string const &name, PzG::LaczeDoGNUPlota &Lacze);
 
   /*!
  *  \brief Oczyszcza plik ze sciezka
@@ -304,6 +309,17 @@ public:
  */
   bool Drone_basic_motion_flight(double const &angle, double const &len, PzG::LaczeDoGNUPlota &Lacze);
 
+    /*!
+ *  \brief Metoda realizujaca ladowanie drona
+ *     \pre Lacze musi byc odpowiednio skonfigurowane
+ *     \param[in] path - std::vector<> z ktorego wypisywana jest sciezka    
+ *     \param[in] Lacze - aktywne lacze do gnuplota                                                                          
+ *     \post W oknie gnuplota wykonuje sie animacja ruchu drona
+ *     \retval true - jesli operacja sie powiedzie
+ *     \retval false - w przeciwnym wypadku                                   
+ */
+  bool Drone_descent(PzG::LaczeDoGNUPlota &Lacze);
+
   /*!
  *  \brief Metoda robiaca "oblot" drona wokol punktu (z modyfikacji)
  *     \pre Lacze musi byc odpowiednio skonfigurowane
@@ -324,7 +340,7 @@ public:
  *     \retval true - jesli jest odpowiednio skonfigurowane lacze
  *     \retval false - w przeciwnym wypadku                             
  */
-  bool Drone_make_path_roundabout(double const &radius, std::vector<Vector3D> &path);
+  bool Drone_make_path_roundabout(double const &radius);
 
   /*!
  *  \brief Wypisuje nazwe obiektu                                                    

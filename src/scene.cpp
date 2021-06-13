@@ -33,7 +33,7 @@ void Scene::delete_scene_files()
     std::list<std::shared_ptr<Block>>::const_iterator i;
     i = objects.begin();
     std::advance(i, 2);
-    for(;i!=objects.end();++i)
+    for (; i != objects.end(); ++i)
     {
         remove(i->get()->get_final_name().c_str());
         remove(i->get()->get_sample_name().c_str());
@@ -398,6 +398,7 @@ bool Scene::fly(double const &angle, double const &len, PzG::LaczeDoGNUPlota &La
     std::list<std::shared_ptr<Block>>::const_iterator i;
     i = objects.begin();
     int k;
+    bool is_intersected = 0;
     for (; i != objects.end(); ++i)
     {
         k = i->get()->get_type();
@@ -405,24 +406,34 @@ bool Scene::fly(double const &angle, double const &len, PzG::LaczeDoGNUPlota &La
         {
             Cuboid *d = static_cast<Cuboid *>(i->get());
             if (!flies[active]->check_intersection(*d))
+            {
                 std::cout << k;
+                is_intersected = 1;
+            }
         }
 
         else if (k >= 4 && k <= 6)
         {
             Prism *d = static_cast<Prism *>(i->get());
             if (!flies[active]->check_intersection(*d))
+            {
                 std::cout << k;
+                is_intersected = 1;
+            }
         }
         else if (k == 0)
         {
             Drone *d = static_cast<Drone *>(i->get());
             if (!(*d == *(flies[active].get())))
                 if (!flies[active]->check_intersection(*d))
+                {
                     std::cout << k;
+                    is_intersected = 1;
+                }
         }
     }
-
+    if (!is_intersected)
+        flies[active]->Drone_descent(Lacze);
     return 1;
 }
 
