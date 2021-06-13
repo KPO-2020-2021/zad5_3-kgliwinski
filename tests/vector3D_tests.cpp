@@ -711,3 +711,31 @@ TEST_CASE("V 14.03: translation 3")
     Vector3D res(r);
     CHECK (res == v1.translation(v2));
 }
+
+TEST_CASE("V 15.01: get_quarter 1")
+{
+    double tab[3] = {1,1,0};
+    Vector3D vec(tab);
+    CHECK(vec.get_quarter() == 1);
+}
+
+TEST_CASE("V 15.02: get_quarter 2")
+{
+    double tab[3] = {-1,1,0};
+    Vector3D vec(tab);
+    CHECK(vec.get_quarter() == 2);
+}
+
+TEST_CASE("V 15.03: get_quarter 3")
+{
+    double tab[3] = {-1,-1,0};
+    Vector3D vec(tab);
+    CHECK(vec.get_quarter() == 3);
+}
+
+TEST_CASE("V 15.04: get_quarter 4")
+{
+    double tab[3] = {1,-1,0};
+    Vector3D vec(tab);
+    CHECK(vec.get_quarter() == 4);
+}

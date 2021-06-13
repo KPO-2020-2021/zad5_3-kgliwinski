@@ -58,6 +58,8 @@ public:
  */
    Block(const std::string &s_name, const std::string &f_name);
 
+   virtual ~Block();
+
    /*!
  *  \brief Metoda zapisujaca do klasy nazwe pliku z wzorcowa bryla                                                                                                    
  *      \param[in] name - nazwa pliku                                                                                                                 
@@ -153,4 +155,5 @@ public:
  *     \post Zwraca cztery wierzcholki tops[0][0] - tops[0][3] zrzytowane na XY do tab                             
  */
   virtual bool get_basis_pro(std::vector<Vector3D> &vec) const;
+
 };

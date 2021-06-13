@@ -283,7 +283,9 @@ public:
 
   /*!
  *  \brief Metoda obliczajaca i przeprowadzajaca caly ruch drona
- *          (obrot o kat i przelot z zadania 5.1) 
+ *          (obrot o kat i przelot z zadania 5.1)
+ *         Realizuje tylko lot dopoki nie znajdzie sie nad miejscem ladowania \n
+ *         Nastepnie nastepuje sprawdzenie miejsca ladowania \n
  *     \pre Lacze musi byc odpowiednio skonfigurowane
  *     \param[in] angle - kat w stopniach
  *     \param[in] len - dlugosc przelotu       
@@ -292,7 +294,7 @@ public:
  *     \retval true - jesli operacja sie powiedzie
  *     \retval false - w przeciwnym wypadku                                   
  */
-  bool Drone_basic_motion(double const &angle, double const &len, PzG::LaczeDoGNUPlota &Lacze);
+  bool Drone_basic_motion_flight(double const &angle, double const &len, PzG::LaczeDoGNUPlota &Lacze);
 
   /*!
  *  \brief Metoda robiaca "oblot" drona wokol punktu (z modyfikacji)
@@ -348,6 +350,22 @@ public:
  *  \retval true - jesli sie przecina, false w przeciwnym wypadku                                                     
  */
   bool check_intersection(const Cuboid &cub) const;
+
+    /*!
+ *  \brief Methoda sprawdzajaca czy rzutowanie drona na plaszczyzne XY \n
+ *         przecina sie z rzutowaniem granistoslupa pri
+ *  \param[in] pri - graniastoslup dla ktorego sprawdzamy
+ *  \retval true - jesli sie przecina, false w przeciwnym wypadku                                                     
+ */
+  bool check_intersection(const Prism &pri) const;
+
+    /*!
+ *  \brief Methoda sprawdzajaca czy rzutowanie drona na plaszczyzne XY \n
+ *         przecina sie z rzutowaniem drona dro
+ *  \param[in] dro - dron dla ktorego sprawdzamy
+ *  \retval true - jesli sie przecina, false w przeciwnym wypadku                                                     
+ */
+  bool check_intersection(const Drone &dro) const;
 
   /*!
  *  \brief Methoda uzywana przy check_intersection() przesuwajaca i rotujaca caly uklad

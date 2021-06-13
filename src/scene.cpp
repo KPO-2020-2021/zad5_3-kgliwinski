@@ -15,10 +15,12 @@ Scene::Scene(Vector3D const (&pos)[SIZE], Vector3D const (&scal_bod)[SIZE], Vect
         tmp[i].set_rotors_in_place();
     }
     std::shared_ptr<Drone> a;
-    for(i=0;i<2;++i)
+    std::shared_ptr<Drone> b;
+    for (i = 0; i < 2; ++i)
     {
         a = std::make_shared<Drone>(tmp[i]);
-        flies.push_back(a);
+        b = std::dynamic_pointer_cast<Drone>(a);
+        flies.push_back(b);
     }
     active = 0;
     filename_num = 0;
@@ -118,7 +120,7 @@ bool Scene::switch_object_position(const unsigned int &num, const double &x, con
         return 0;
     std::list<std::shared_ptr<Block>>::iterator i = objects.begin();
     std::advance(i, num + 1);
-    i->get()->switch_pos(x,y);
+    i->get()->switch_pos(x, y);
     return 1;
 }
 
@@ -374,8 +376,37 @@ void Scene::print_positions() const
 
 bool Scene::fly(double const &angle, double const &len, PzG::LaczeDoGNUPlota &Lacze)
 {
-    if (!flies[active].get()->Drone_basic_motion(angle, len, Lacze))
+    if (!flies[active].get()->Drone_basic_motion_flight(angle, len, Lacze))
         return 0;
+    std::list<std::shared_ptr<Block>>::const_iterator i;
+    i = objects.begin();
+    int k,licz=0;
+    for (; i != objects.end(); ++i)
+    {
+        licz++;
+        k = i->get()->get_type();
+        if (k >= 1 && k <= 3)
+        {
+            Cuboid *d = static_cast<Cuboid *>(i->get());
+            if(!flies[active]->check_intersection(*d))
+                    std::cout<<licz<<" cuboid\n";
+        }
+
+        else if (k >= 4 && k <= 6)
+        {
+            Prism *d = static_cast<Prism *>(i->get());
+            if(!flies[active]->check_intersection(*d))
+                    std::cout<<"prism\n";
+        }
+        else if (k == 0)
+        {
+            Drone *d = static_cast<Drone *>(i->get());
+            if (!(*d == *(flies[active].get())))
+                if(!flies[active]->check_intersection(*d))
+                    std::cout<<"dron\n";
+        }
+    }
+
     return 1;
 }
 

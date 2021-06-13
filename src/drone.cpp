@@ -383,7 +383,7 @@ void Drone::Drone_change_to_sample(double const &angle)
     }
 }
 
-bool Drone::Drone_basic_motion(double const &angle, double const &len, PzG::LaczeDoGNUPlota &Lacze)
+bool Drone::Drone_basic_motion_flight(double const &angle, double const &len, PzG::LaczeDoGNUPlota &Lacze)
 {
     long unsigned int i;
     drone_angle += angle;
@@ -425,6 +425,7 @@ bool Drone::Drone_basic_motion(double const &angle, double const &len, PzG::Lacz
         Lacze.Rysuj();
     }
     Drone_change_to_sample(drone_angle);
+    /*
     std::cout << "Opadanie" << std::endl;
     for (; i < 521; ++i)
     {
@@ -440,6 +441,7 @@ bool Drone::Drone_basic_motion(double const &angle, double const &len, PzG::Lacz
     std::cin.ignore(100000, '\n');
     if (!Drone_path_clear("../datasets/sciezka.dat"))
         return 0;
+    */
     Lacze.Rysuj();
     drone_pos.print_count();
     cur_path.clear();
@@ -604,20 +606,49 @@ bool Drone::check_intersection(const Cuboid &cub) const
 {
     long unsigned int i;
     std::vector<Vector3D> vec;
-    cub.get_basis_pro(vec);
     if (!cub.get_basis_pro(vec))
+    {
         return 0;
+    }
     double rad = this->get_drone_radius();
     Vector3D pro = this->get_pos_pro();
     for (i = 0; i < vec.size(); ++i)
     {
         if ((pro - vec[i]).get_len() <= rad) //sprawdzenie odleglosci od wierzcholkow
+        {
             return 0;
+        }
     }
     new_coordinate_system_intersection(vec, pro);
     std::vector<Vector3D> vec_cop = vec;
-    enlargen_by_rad(rad,vec, vec_cop);
-    return main_check(vec,vec_cop);
+    enlargen_by_rad(rad, vec, vec_cop);
+    return !main_check(vec, vec_cop);
+}
+
+bool Drone::check_intersection(const Prism &pri) const
+{
+    double rad = this->get_drone_radius();
+    Vector3D pro = this->get_pos_pro();
+    double rad_pri = pri.get_basis_diagonal_len() * 0.5;
+    Vector3D pro_pri = pri.get_basis_centre();
+    Vector3D dist = pro - pro_pri;
+    if (dist.get_len() <= rad + rad_pri)
+        return 0;
+    else
+        return 1;
+}
+
+bool Drone::check_intersection(const Drone &dro) const
+{
+    double rad = this->get_drone_radius();
+    Vector3D pro = this->get_pos_pro();
+    double rad_dro = dro.get_drone_radius();
+    Vector3D pro_dro = dro.get_pos_pro();
+    Vector3D dist = pro - pro_dro;
+    if (dist.get_len() <= rad + rad_dro)
+        return 0;
+    else
+        return 1;
 }
 
 void Drone::new_coordinate_system_intersection(std::vector<Vector3D> &vec, Vector3D &pro) const
@@ -637,7 +668,7 @@ void Drone::new_coordinate_system_intersection(std::vector<Vector3D> &vec, Vecto
     pro = Vector3D(); //{0,0,0}
 }
 
-void Drone::enlargen_by_rad(double const & rad, std::vector<Vector3D> &vec, std::vector<Vector3D> &vec_cop) const
+void Drone::enlargen_by_rad(double const &rad, std::vector<Vector3D> &vec, std::vector<Vector3D> &vec_cop) const
 {
     double tab_y[3] = {0, rad, 0};
     double tab_x[3] = {rad, 0, 0};
@@ -649,19 +680,24 @@ void Drone::enlargen_by_rad(double const & rad, std::vector<Vector3D> &vec, std:
     vec[2] = vec[2] + tab_y;
     vec_cop[2] = vec_cop[2] + tab_x;
     vec[3] = vec[3] + tab_y;
-    vec_cop[1] = vec_cop[1] - tab_x;
+    vec_cop[3] = vec_cop[3] - tab_x;
 }
 
 bool Drone::main_check(std::vector<Vector3D> &vec, std::vector<Vector3D> &vec_cop) const
 {
     long unsigned int i;
     int tab[4] = {3,4,1,2};
-    for(i=0;i<4;++i)
+    for (i = 0; i < 4; ++i)
     {
-        if(vec[i].get_quarter() != tab[i])
+        if (vec[i].get_quarter() != tab[i])
+        {
             return 0;
-        if(vec_cop[i].get_quarter() != tab[i])
+        }
+
+        if (vec_cop[i].get_quarter() != tab[i])
+        {
             return 0;
+        }
     }
     return 1;
 }

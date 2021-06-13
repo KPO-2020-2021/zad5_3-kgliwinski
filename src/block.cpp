@@ -25,6 +25,11 @@ Block::Block(const std::string &s_name, const std::string &f_name)
     scale = vec;
 }
 
+Block::~Block()
+{
+
+}
+
 void Block::set_sample_name(const std::string &name)
 {
     sample_name = name;
