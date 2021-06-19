@@ -215,8 +215,8 @@ double Drone::get_body_height() const
 
 double Drone::get_drone_radius() const
 {
-    double res = body.get_basis_diagonal_len() * 0.5;
-    res += rotors[0].get_basis_diagonal_len() * 0.5;
+    double res = body.get_basis_diagonal_len() * 0.60;
+    res += rotors[0].get_basis_diagonal_len() * 0.60;
     return res;
 }
 
@@ -308,7 +308,27 @@ bool Drone::Drone_make_path(Vector3D const &tran)
     }
     double tab2[3] = {0, 0, -1};
     Vector3D fall(tab2);
-    for (; i < 521; ++i)
+    for (; i < 520; ++i)
+    {
+        path.push_back(path.at(i) + fall);
+    }
+    return 1;
+}
+
+bool Drone::Drone_update_path(Vector3D const &tran)
+{
+    long unsigned int i;
+    if (tran[2] != 0)
+        return 0;
+    path.resize(path.size() - 80);
+    Vector3D fly = tran / 360;
+    for (i = 440; i < 800; ++i)
+    {
+        path.push_back(path.at(i) + fly);
+    }
+    double tab2[3] = {0, 0, -1};
+    Vector3D fall(tab2);
+    for (; i < 880; ++i)
     {
         path.push_back(path.at(i) + fall);
     }
@@ -424,10 +444,53 @@ bool Drone::Drone_basic_motion_flight(double const &angle, double const &len, Pz
         usleep(10000); // 0.1 ms
         Lacze.Rysuj();
     }
-    std::cout << "Zmiana orientacji" << std::endl;
-    Drone_rotation_animation(Lacze, angle);
+    if (abs(angle) >= 0.001)
+    {
+        std::cout << "Zmiana orientacji" << std::endl;
+        Drone_rotation_animation(Lacze, angle);
+    }
     std::cout << "Lot do przodu" << std::endl;
     for (; i < 440; ++i)
+    {
+        this->drone_pos = path.at(i);
+        *this = translation_to_pos();
+        Print_to_files_drone();
+        Rotors_rotation_animation();
+        usleep(10000); // 0.1 ms
+        Lacze.Rysuj();
+    }
+    Drone_change_to_sample(drone_angle);
+    Lacze.Rysuj();
+    return 1;
+}
+
+bool Drone::Drone_motion_after_update(Vector3D const &tran, PzG::LaczeDoGNUPlota &Lacze)
+{
+    long unsigned int i;
+    Vector3D vers_tran = tran / tran.get_len();
+    double ang = atan2(vers_tran[1], vers_tran[0]) - atan2(this->get_orien()[1], this->get_orien()[0]);
+    ang *= 180 / PI;
+    drone_angle += ang;
+    std::cout << "Naciśnij ENTER, aby dorysowac sciezke" << std::endl;
+    std::cin.ignore(100000, '\n');
+    if (!Drone_path_clear("../datasets/sciezka.dat"))
+        return 0;
+    if (!Drone_update_path(tran))
+        return 0;
+    if (!Drone_path_to_file("../datasets/sciezka.dat", Lacze))
+        return 0;
+    Lacze.Rysuj();
+
+    std::cout << "Naciśnij ENTER, aby wykonac animacje przelotu" << std::endl;
+    std::cin.ignore(100000, '\n');
+
+    if (abs(ang) >= 0.001)
+    {
+        std::cout << "Zmiana orientacji" << std::endl;
+        Drone_rotation_animation(Lacze, ang);
+    }
+    std::cout << "Lot do przodu" << std::endl;
+    for (i = 440; i < 800; ++i)
     {
         this->drone_pos = path.at(i);
         *this = translation_to_pos();
@@ -445,7 +508,7 @@ bool Drone::Drone_descent(PzG::LaczeDoGNUPlota &Lacze)
 {
     long unsigned int i;
     std::cout << "Opadanie" << std::endl;
-    for (i = 440; i < 521; ++i)
+    for (i = path.size() - 81; i < path.size(); ++i)
     {
         this->drone_pos = path.at(i);
         *this = translation_to_pos();

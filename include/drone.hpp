@@ -250,6 +250,19 @@ public:
   bool Drone_make_path(Vector3D const &tran);
 
   /*!
+ *  \brief Metoda aktualizujaca sciezke drona w przypadku braku mozliwosci ladowania
+ *         w okreslonym miejscu
+ *     \pre Lacze musi byc odpowiednio skonfigurowane. Wektor translacji
+ *          musi miec zerowa wpolrzedna z
+ *     \param[in] tran - wektor translacji
+ *     \param[in] path - std::vector<> do ktorego zapisywana jest sciezka                                                                                   
+ *     \post W oknie gnuplota wyrysowuje sie sciezka drona    
+ *     \retval true - jesli jest odpowiednio skonfigurowane lacze
+ *     \retval false - w przeciwnym wypadku                             
+ */
+  bool Drone_update_path(Vector3D const &tran);
+
+  /*!
  *  \brief Metoda zapisujaca sciezke do pliku oraz do lacza
  *     \param[in] path - std::vector<> z ktorego wypisywana jest sciezka
  *     \param[in] name - nazwa pliku do zapisu      
@@ -308,6 +321,20 @@ public:
  *     \retval false - w przeciwnym wypadku                                   
  */
   bool Drone_basic_motion_flight(double const &angle, double const &len, PzG::LaczeDoGNUPlota &Lacze);
+
+  /*!
+ *  \brief Metoda obliczajaca i przeprowadzajaca koncowy ruch drona
+ *          (obrot o kat i koncowy przelot z zadania 5.3) w przypadku wykrycia przeszkody
+ *         Realizuje tylko lot dopoki nie znajdzie sie nad miejscem ladowania \n
+ *         Nastepnie nastepuje ladowanie \n
+ *     \pre Lacze musi byc odpowiednio skonfigurowane
+ *     \param[in] tran - wektor translacji drona   
+ *     \param[in] Lacze - aktywne lacze do gnuplota                                                                          
+ *     \post W oknie gnuplota wykonuje sie animacja ruchu drona
+ *     \retval true - jesli operacja sie powiedzie
+ *     \retval false - w przeciwnym wypadku                                   
+ */
+  bool Drone_motion_after_update(Vector3D const &tran, PzG::LaczeDoGNUPlota &Lacze);
 
     /*!
  *  \brief Metoda realizujaca ladowanie drona

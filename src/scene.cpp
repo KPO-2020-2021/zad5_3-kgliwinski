@@ -405,6 +405,8 @@ bool Scene::fly(double const &angle, double const &len, PzG::LaczeDoGNUPlota &La
         Vector3D new_land;
         new_land = scan_plane(Lacze);
         std::cout << new_land;
+        flies[active]->Drone_motion_after_update(new_land, Lacze);
+        flies[active]->Drone_descent(Lacze);
     }
     return 1;
 }
@@ -488,12 +490,10 @@ Vector3D Scene::scan_plane(PzG::LaczeDoGNUPlota &Lacze)
                 is_place = 1;
                 i = 359;
                 std::cout << "Znaleziono miejsce do ladowania!\n";
-                usleep(3000000); //3s
             }
             mat = mat.rotation_matrix(-ang, 'z');
             tmp = tmp.rotation_around_cen(mat);
         }
-        //std::cout << radius << "\n";
         tab2[0] = 1.0 / radius;
         tab2[1] = 1.0 / radius;
         tab2[2] = 1.0 / 80.0;
@@ -502,6 +502,8 @@ Vector3D Scene::scan_plane(PzG::LaczeDoGNUPlota &Lacze)
         radius++;
         usleep(10000);
     }
+    std::cout << "\nNaciśnij ENTER, aby usunac pole widzenia drona" << std::endl;
+    std::cin.ignore(100000, '\n');
     Lacze.UsunNazwePliku(cam.get_final_name());
     Lacze.Rysuj();
     remove(fin.c_str());
