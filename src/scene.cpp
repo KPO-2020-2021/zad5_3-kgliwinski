@@ -125,6 +125,8 @@ bool Scene::delete_object(const unsigned int &num, PzG::LaczeDoGNUPlota &Lacze)
     if (!Lacze.UsunNazwePliku(name))
         return 0;
     remove(name.c_str());
+    name = i->get()->get_sample_name();
+    remove(name.c_str());
     objects.erase(i);
     return 1;
 }
@@ -395,6 +397,20 @@ bool Scene::fly(double const &angle, double const &len, PzG::LaczeDoGNUPlota &La
 {
     if (!flies[active].get()->Drone_basic_motion_flight(angle, len, Lacze))
         return 0;
+    bool inter = check_objects_intersect(*flies[active].get());
+    if (!inter)
+        flies[active]->Drone_descent(Lacze);
+    else
+    {
+        Vector3D new_land;
+        new_land = scan_plane(Lacze);
+        std::cout << new_land;
+    }
+    return 1;
+}
+
+bool Scene::check_objects_intersect(const Drone &dro) const
+{
     std::list<std::shared_ptr<Block>>::const_iterator i;
     i = objects.begin();
     int k;
@@ -405,9 +421,9 @@ bool Scene::fly(double const &angle, double const &len, PzG::LaczeDoGNUPlota &La
         if (k >= 1 && k <= 3)
         {
             Cuboid *d = static_cast<Cuboid *>(i->get());
-            if (!flies[active]->check_intersection(*d))
+            if (!dro.check_intersection(*d))
             {
-                std::cout << k;
+                //std::cout << k;
                 is_intersected = 1;
             }
         }
@@ -415,26 +431,82 @@ bool Scene::fly(double const &angle, double const &len, PzG::LaczeDoGNUPlota &La
         else if (k >= 4 && k <= 6)
         {
             Prism *d = static_cast<Prism *>(i->get());
-            if (!flies[active]->check_intersection(*d))
+            if (!dro.check_intersection(*d))
             {
-                std::cout << k;
+                //std::cout << k;
                 is_intersected = 1;
             }
         }
         else if (k == 0)
         {
             Drone *d = static_cast<Drone *>(i->get());
-            if (!(*d == *(flies[active].get())))
-                if (!flies[active]->check_intersection(*d))
+            if (!(*d == dro))
+                if (!dro.check_intersection(*d))
                 {
-                    std::cout << k;
+                    //std::cout << k;
                     is_intersected = 1;
                 }
         }
     }
-    if (!is_intersected)
-        flies[active]->Drone_descent(Lacze);
-    return 1;
+    return is_intersected;
+}
+
+Vector3D Scene::scan_plane(PzG::LaczeDoGNUPlota &Lacze)
+{
+    int i;
+    double radius = 10.0, ang;
+    Vector3D land_place;
+    double tab2[3] = {1, 1, 1}, tab[3];
+    tab[2] = 80;
+    Vector3D scal(tab2);
+    Drone tmp = *flies[active].get();
+    bool is_place = 0;
+    std::string sam = "../datasets/main/sample/drone_cam.dat", fin = "../datasets/main/final/drone_cam.dat";
+    Tent cam(sam, fin, scal);
+    Lacze.DodajNazwePliku(fin.c_str());
+    while (!is_place)
+    {
+        tab[0] = radius;
+        tab[1] = radius;
+        cam.set_scale(tab);
+        cam = cam.scale_pri();
+        double p[3] = {flies[active].get()->get_pos()[0], flies[active].get()->get_pos()[1], 40.0};
+        Vector3D pos(p);
+        cam = cam.translation_to_O();
+        cam = cam.translation(pos);
+        cam.Prism_To_File(cam.get_final_name());
+        Lacze.Rysuj();
+        for (i = 0; i < 360; ++i)
+        {
+            ang = 0.0 + i;
+            Matrix3D mat;
+            mat = mat.rotation_matrix(ang, 'z');
+            tmp = tmp.rotation_around_cen(mat);
+            land_place = tmp.get_orien() * radius;
+            if (!check_objects_intersect(tmp.translation(land_place)))
+            {
+                is_place = 1;
+                i = 359;
+                std::cout << "Znaleziono miejsce do ladowania!\n";
+                usleep(3000000); //3s
+            }
+            mat = mat.rotation_matrix(-ang, 'z');
+            tmp = tmp.rotation_around_cen(mat);
+        }
+        //std::cout << radius << "\n";
+        tab2[0] = 1.0 / radius;
+        tab2[1] = 1.0 / radius;
+        tab2[2] = 1.0 / 80.0;
+        cam.set_scale(tab2);
+        cam = cam.scale_pri();
+        radius++;
+        usleep(10000);
+    }
+    Lacze.UsunNazwePliku(cam.get_final_name());
+    Lacze.Rysuj();
+    remove(fin.c_str());
+    remove(sam.c_str());
+    return land_place;
 }
 
 bool Scene::fly_roundabout(double const &radius, PzG::LaczeDoGNUPlota &Lacze)

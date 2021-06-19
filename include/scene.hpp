@@ -32,7 +32,7 @@ private:
   /*!
  * \brief Tablica dronow obslugiwanych w programie
  */
- std::vector<std::shared_ptr<Drone>> flies;
+  std::vector<std::shared_ptr<Drone>> flies;
   /*!
  * \brief Wskaznik na aktywnego drona. Wartosc koresponduje z ta
  *          z tablicy flies (drony sa numerowane w zakresie 0 , 1 , ... , (SIZE-1))
@@ -244,8 +244,23 @@ public:
  *     \retval true - jesli jest odpowiednio skonfigurowane lacze
  *     \retval false - w przeciwnym wypadku                                   
  */
-
   bool fly(double const &angle, double const &len, PzG::LaczeDoGNUPlota &Lacze);
+
+  /*!
+ * \brief Sprawdza czy jakis objekt koliduje z dronem jesli ten mialby wyladowac w danym miejscu                                                                      
+ *     \post W oknie gnuplota wykonuje sie animacja translacji drona
+ *     \retval true - jesli sie przecina, false w przeciwnym wypadku
+ */
+  bool check_objects_intersect(const Drone &dro) const;
+
+  /*!
+ * \brief Skanowanie powierzchni pod dronem, gdy dron nie moze wyladowac w danym miejscu \n
+ *        Rysowany jest rowniez obszar w ktorym dron szuka miejsca do ladowania
+ *     \pre Lacze musi byc odpowiednio skonfigurowane
+ *     \param[in] Lacze - aktywne lacze do gnuplota                                                                          
+ *     \return Wektor reprezentujacy przesuniecie jakie dron musi wykonac aby wyladowac                             
+ */
+  Vector3D scan_plane(PzG::LaczeDoGNUPlota &Lacze);
 
   /*!
  * \brief Przelot aktywnego drona
