@@ -1,0 +1,13 @@
+<map id="Drone::check_intersection" name="Drone::check_intersection">
+<area shape="rect" id="node1" title="Methoda sprawdzajaca czy rzutowanie drona na plaszczyzne XY &#160;&#160;przecina sie z rzutowaniem prostopadlos..." alt="" coords="5,132,196,159"/>
+<area shape="rect" id="node2" href="$class_drone.html#a0a57fc27f1cfacca5172426c15749b75" title="Methoda powieksza rzutowana figure o radius w odpowiedni sposob." alt="" coords="246,5,423,32"/>
+<area shape="rect" id="node3" href="$class_cuboid.html#a215319dead51277df1c35673c1eb29b3" title="Metoda zwracajaca wierzcholki podstawy prostopadloscianu zrzutowane na plaszczyzne XY do tablicy" alt="" coords="252,56,417,83"/>
+<area shape="rect" id="node4" href="$class_drone.html#ab0684fb71c2da878193af0f27a44d276" title="Zwraca promien okregu rzutowany przez dron na plaszczyzne XY" alt="" coords="244,107,425,133"/>
+<area shape="rect" id="node8" href="$class_drone.html#ab717196d8d03bde942a75d1f693fe362" title="Zwraca rzutowanie pozycje srodka podstawy body na XY" alt="" coords="261,157,409,184"/>
+<area shape="rect" id="node10" href="$class_drone.html#a0920ad155e2877898f21a038d68e96f9" title="Methoda sprawdza czy punkt 0,0,0 miesci sie w powiekszonym przez metode &#160;&#160;enlargen_by_rad obszarze w ..." alt="" coords="261,208,408,235"/>
+<area shape="rect" id="node11" href="$class_drone.html#a8e86dfee9cdbdc1d2791ad51d1212517" title="Methoda uzywana przy check_intersection() przesuwajaca i rotujaca caly uklad." alt="" coords="249,259,421,301"/>
+<area shape="rect" id="node5" href="$class_prism.html#ab08ae36567a12753d78ae4b5fb2fbfa2" title="Metoda zwracajaca dlugosc przekatnej podstawy prostopadloscianu" alt="" coords="477,56,696,83"/>
+<area shape="rect" id="node6" href="$class_cuboid.html#a79e4e3337e02d8f8a757561cedbdb71f" title="Metoda zwracajaca dlugosc przekatnej podstawy prostopadloscianu" alt="" coords="473,107,700,133"/>
+<area shape="rect" id="node7" href="$class_cuboid.html#a0e7f901199262984ab6ba0da01d96c40" title="Metoda zwracajaca srodek podstawy ostroslupa" alt="" coords="748,132,933,159"/>
+<area shape="rect" id="node9" href="$class_drone.html#abf6bc328fea7ec556e5a23ca37cf6d8e" title="Zwraca pozycje srodka podstawy body" alt="" coords="527,157,647,184"/>
+</map>

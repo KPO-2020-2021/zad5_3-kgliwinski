@@ -402,9 +402,10 @@ bool Scene::fly(double const &angle, double const &len, PzG::LaczeDoGNUPlota &La
         flies[active]->Drone_descent(Lacze);
     else
     {
+        std::cout<<"Szukanie miejsca do ladowania...\n\n";
         Vector3D new_land;
         new_land = scan_plane(Lacze);
-        std::cout << new_land;
+        //std::cout << new_land;
         flies[active]->Drone_motion_after_update(new_land, Lacze);
         flies[active]->Drone_descent(Lacze);
     }
@@ -456,7 +457,7 @@ bool Scene::check_objects_intersect(const Drone &dro) const
 Vector3D Scene::scan_plane(PzG::LaczeDoGNUPlota &Lacze)
 {
     int i;
-    double radius = 10.0, ang;
+    double radius = 5.0, ang;
     Vector3D land_place;
     double tab2[3] = {1, 1, 1}, tab[3];
     tab[2] = 80;

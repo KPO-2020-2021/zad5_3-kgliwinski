@@ -1,0 +1,18 @@
+<map id="Prism::Prism_To_File" name="Prism::Prism_To_File">
+<area shape="rect" id="node1" title=" " alt="" coords="892,406,1047,433"/>
+<area shape="rect" id="node2" href="$class_drone.html#aae0029f50083a01fe75c7d504c2fe5b9" title="Metoda zapisujaca parametry drona do plikow (do plikow final kazdego z elementow)" alt="" coords="680,227,833,268"/>
+<area shape="rect" id="node10" href="$class_drone.html#a577871807280aab8d9c0d4e45b435ec4" title="Metoda rysujaca drona w gnuplocie. Przeznaczona do testow" alt="" coords="669,340,844,381"/>
+<area shape="rect" id="node11" href="$class_scene.html#aa5fc0e5a94bfa0766f6e5ff10993630d" title="Skanowanie powierzchni pod dronem, gdy dron nie moze wyladowac w danym miejscu &#160;&#160;Rysowany jest rownie..." alt="" coords="685,406,828,433"/>
+<area shape="rect" id="node15" href="$class_drone.html#a63898ba4cc161710cf08f7b578f3d90f" title="Metoda ustawiajaca nazwy plikow w laczy do gnuplota (nazwy final!)" alt="" coords="677,457,837,499"/>
+<area shape="rect" id="node16" href="$class_prism.html#a8a80c4334810ad934e6e43bb5ee14f07" title="Zmiana pozycji obiektu na plaszczyznie XY na nowe wspolrzedne." alt="" coords="687,523,826,550"/>
+<area shape="rect" id="node3" href="$class_drone.html#a7eecbd031df9009e113d355a9dcdf4e1" title="Metoda obliczajaca i przeprowadzajaca caly ruch drona (obrot o kat i przelot z zadania 5...." alt="" coords="11,256,161,297"/>
+<area shape="rect" id="node4" href="$class_drone.html#a4abbed4a4cc52e5630f07f9129b46c5c" title="Metoda realizujaca ladowanie drona." alt="" coords="226,103,393,130"/>
+<area shape="rect" id="node5" href="$class_drone.html#aec9abadf85777ab20e361d1389aab466" title="Metoda obliczajaca i przeprowadzajaca koncowy ruch drona (obrot o kat i koncowy przelot z zadania 5...." alt="" coords="5,147,167,188"/>
+<area shape="rect" id="node6" href="$class_drone.html#af052f6bb793d1229b99b16b800b95b82" title="Metoda animujaca obrot drona i wyrysowujaca calosc w gnuplocie." alt="" coords="226,256,393,297"/>
+<area shape="rect" id="node7" href="$class_drone.html#ab7808296cec81143dbddd7516340a371" title="Metoda robiaca &quot;oblot&quot; drona wokol punktu (z modyfikacji)" alt="" coords="215,322,404,349"/>
+<area shape="rect" id="node8" href="$class_drone.html#a5fc9dd645ad3856b5d3c501c63c464e3" title="Metoda animujaca translacje drona i wyrysowujaca calosc w gnuplocie." alt="" coords="217,37,402,79"/>
+<area shape="rect" id="node9" href="$class_drone.html#aedb04b80609b22ff4eb4a957bc149a48" title="Metoda animujaca obrot rotorow i zapisujaca to w plikach. Metoda sluzy jako metoda pomocnicza,..." alt="" coords="452,197,621,239"/>
+<area shape="rect" id="node12" href="$class_scene.html#a5fb0b9741a75dec929b5ea5d6ac917a1" title="Przelot aktywnego drona." alt="" coords="494,423,579,450"/>
+<area shape="rect" id="node13" href="$class_menu.html#acd338552222b744cd030e17776cb5d9b" title="Obsluguje wybor menu." alt="" coords="233,423,385,450"/>
+<area shape="rect" id="node14" href="$class_menu.html#af7e6a49bd56499facef9cc98561ea169" title="Inicjuje i obsluguje menu." alt="" coords="21,423,151,450"/>
+</map>

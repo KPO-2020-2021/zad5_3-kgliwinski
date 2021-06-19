@@ -1,0 +1,7 @@
+<map id="Scene::check_objects_intersect" name="Scene::check_objects_intersect">
+<area shape="rect" id="node1" title="Sprawdza czy jakis objekt koliduje z dronem jesli ten mialby wyladowac w danym miejscu" alt="" coords="708,5,869,47"/>
+<area shape="rect" id="node2" href="$class_scene.html#a5fb0b9741a75dec929b5ea5d6ac917a1" title="Przelot aktywnego drona." alt="" coords="384,13,469,39"/>
+<area shape="rect" id="node5" href="$class_scene.html#aa5fc0e5a94bfa0766f6e5ff10993630d" title="Skanowanie powierzchni pod dronem, gdy dron nie moze wyladowac w danym miejscu &#160;&#160;Rysowany jest rownie..." alt="" coords="517,38,660,65"/>
+<area shape="rect" id="node3" href="$class_menu.html#acd338552222b744cd030e17776cb5d9b" title="Obsluguje wybor menu." alt="" coords="184,13,336,39"/>
+<area shape="rect" id="node4" href="$class_menu.html#af7e6a49bd56499facef9cc98561ea169" title="Inicjuje i obsluguje menu." alt="" coords="5,13,136,39"/>
+</map>

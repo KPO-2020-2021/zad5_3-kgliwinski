@@ -1,0 +1,9 @@
+<map id="PzG::InfoPlikuDoRysowania::WezNazwePliku" name="PzG::InfoPlikuDoRysowania::WezNazwePliku">
+<area shape="rect" id="node1" title="Udostępia nazwę pliku do rysowania." alt="" coords="1001,23,1201,65"/>
+<area shape="rect" id="node2" href="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#a7fa4e775e1aee74869fae174c567c2a6" title="Usuwa z listy nazw plików z danymi do rysowania usuwa wybraną nazwę." alt="" coords="780,23,953,65"/>
+<area shape="rect" id="node3" href="$class_scene.html#aa86f467ff8da149dac89813f90b1ee18" title="Metoda usuwajaca object zadany przez uzytkownika." alt="" coords="384,5,541,32"/>
+<area shape="rect" id="node6" href="$class_scene.html#aa5fc0e5a94bfa0766f6e5ff10993630d" title="Skanowanie powierzchni pod dronem, gdy dron nie moze wyladowac w danym miejscu &#160;&#160;Rysowany jest rownie..." alt="" coords="589,56,732,83"/>
+<area shape="rect" id="node4" href="$class_menu.html#acd338552222b744cd030e17776cb5d9b" title="Obsluguje wybor menu." alt="" coords="184,31,336,57"/>
+<area shape="rect" id="node5" href="$class_menu.html#af7e6a49bd56499facef9cc98561ea169" title="Inicjuje i obsluguje menu." alt="" coords="5,31,136,57"/>
+<area shape="rect" id="node7" href="$class_scene.html#a5fb0b9741a75dec929b5ea5d6ac917a1" title="Przelot aktywnego drona." alt="" coords="420,56,505,83"/>
+</map>

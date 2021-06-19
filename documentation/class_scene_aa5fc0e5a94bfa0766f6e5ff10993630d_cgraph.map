@@ -1,0 +1,43 @@
+<map id="Scene::scan_plane" name="Scene::scan_plane">
+<area shape="rect" id="node1" title="Skanowanie powierzchni pod dronem, gdy dron nie moze wyladowac w danym miejscu &#160;&#160;Rysowany jest rownie..." alt="" coords="5,471,148,497"/>
+<area shape="rect" id="node2" href="$class_scene.html#a1e55ef9fe4c36aea7cbc9304b18271cc" title="Sprawdza czy jakis objekt koliduje z dronem jesli ten mialby wyladowac w danym miejscu" alt="" coords="217,137,378,178"/>
+<area shape="rect" id="node14" href="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#aa815ce8ec16e12fc246cf422e562869e" title="Dodaje nazwę pliku." alt="" coords="211,202,384,243"/>
+<area shape="rect" id="node16" href="$class_block.html#aeef4dd3716afaea42688a4f96456ce27" title="Metoda zwracajaca nazwe pliku z finalna (robocza) bryla" alt="" coords="214,268,381,295"/>
+<area shape="rect" id="node17" href="$class_drone.html#ac8dedb6cf49bdb580df253e3a90d3637" title="Metoda zwracajaca orientacje drona" alt="" coords="232,319,363,345"/>
+<area shape="rect" id="node18" href="$class_prism.html#a2de0dab6d117fc3c8dcbc3c384d0fccd" title=" " alt="" coords="220,369,375,396"/>
+<area shape="rect" id="node20" href="$class_drone.html#ad42bc54902df967b94717617aca1a974" title="Metoda obracajaca dron o zadany kat w 3D wokol srodka figury" alt="" coords="196,579,399,605"/>
+<area shape="rect" id="node22" href="$class_prism.html#ade146d341c0468030f8c1258b7fe1041" title="Metoda przesuwajaca graniastoslup o zadany wektor w 3D" alt="" coords="1015,521,1153,548"/>
+<area shape="rect" id="node23" href="$class_prism.html#afed2c26932d5cb152fd620d2acbfbc3e" title="Metoda przesuwajaca graniastoslup do srodka ukladu wspolrzednych (tak, ze srodek graniastoslupa pokry..." alt="" coords="739,471,913,497"/>
+<area shape="rect" id="node30" href="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#a065f5b8402737cc62b0ad4f66d028335" title="Generuje polecenie rysowania i przesyła je do gnuplota." alt="" coords="211,725,384,766"/>
+<area shape="rect" id="node37" href="$class_prism.html#a07f15c416c9f9c54390bb8737b441a35" title="Metoda skalujaca o wektor scale bedacy czlonkiem klasy block" alt="" coords="235,471,360,497"/>
+<area shape="rect" id="node38" href="$class_block.html#adb6acd13e2ab79cf7e4733ca2d6ae166" title="Metoda zapisujaca do klasy wektor reprezentujacy skale" alt="" coords="234,791,361,817"/>
+<area shape="rect" id="node39" href="$class_drone.html#a9684cd7ce04b7e6191f3d6b3a745370b" title="Przesuwa drona o zadany wektor w 3D" alt="" coords="495,740,633,767"/>
+<area shape="rect" id="node40" href="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#a7fa4e775e1aee74869fae174c567c2a6" title="Usuwa z listy nazw plików z danymi do rysowania usuwa wybraną nazwę." alt="" coords="211,901,384,942"/>
+<area shape="rect" id="node3" href="$class_drone.html#a5369b8139325f0f8d7eb0a7db7c684cd" title="Methoda sprawdzajaca czy rzutowanie drona na plaszczyzne XY &#160;&#160;przecina sie z rzutowaniem prostopadlos..." alt="" coords="469,144,659,171"/>
+<area shape="rect" id="node4" href="$class_drone.html#a0a57fc27f1cfacca5172426c15749b75" title="Methoda powieksza rzutowana figure o radius w odpowiedni sposob." alt="" coords="737,173,915,200"/>
+<area shape="rect" id="node5" href="$class_cuboid.html#a215319dead51277df1c35673c1eb29b3" title="Metoda zwracajaca wierzcholki podstawy prostopadloscianu zrzutowane na plaszczyzne XY do tablicy" alt="" coords="743,224,909,251"/>
+<area shape="rect" id="node6" href="$class_drone.html#ab0684fb71c2da878193af0f27a44d276" title="Zwraca promien okregu rzutowany przez dron na plaszczyzne XY" alt="" coords="735,5,917,32"/>
+<area shape="rect" id="node10" href="$class_drone.html#ab717196d8d03bde942a75d1f693fe362" title="Zwraca rzutowanie pozycje srodka podstawy body na XY" alt="" coords="752,275,900,301"/>
+<area shape="rect" id="node12" href="$class_drone.html#a0920ad155e2877898f21a038d68e96f9" title="Methoda sprawdza czy punkt 0,0,0 miesci sie w powiekszonym przez metode &#160;&#160;enlargen_by_rad obszarze w ..." alt="" coords="753,56,899,83"/>
+<area shape="rect" id="node13" href="$class_drone.html#a8e86dfee9cdbdc1d2791ad51d1212517" title="Methoda uzywana przy check_intersection() przesuwajaca i rotujaca caly uklad." alt="" coords="740,107,912,149"/>
+<area shape="rect" id="node7" href="$class_prism.html#ab08ae36567a12753d78ae4b5fb2fbfa2" title="Metoda zwracajaca dlugosc przekatnej podstawy prostopadloscianu" alt="" coords="975,56,1193,83"/>
+<area shape="rect" id="node8" href="$class_cuboid.html#a79e4e3337e02d8f8a757561cedbdb71f" title="Metoda zwracajaca dlugosc przekatnej podstawy prostopadloscianu" alt="" coords="971,5,1197,32"/>
+<area shape="rect" id="node9" href="$class_cuboid.html#a0e7f901199262984ab6ba0da01d96c40" title="Metoda zwracajaca srodek podstawy ostroslupa" alt="" coords="1245,73,1431,100"/>
+<area shape="rect" id="node11" href="$class_drone.html#abf6bc328fea7ec556e5a23ca37cf6d8e" title="Zwraca pozycje srodka podstawy body" alt="" coords="1024,208,1144,235"/>
+<area shape="rect" id="node15" href="$namespace_pz_g.html#ae1aad0c681853d7e47da4cdfccefc102" title="Funkcja pomocnicza, sprawdza czy plik o podanej nazwie jest na dysku." alt="" coords="501,209,627,236"/>
+<area shape="rect" id="node19" href="$class_prism.html#a764c6940e4fb65303981e8b877b28561" title="Metoda wypisania odpowiednich wierzcholkow do pliku zgodnie z zaproponowanym sposobem zadaniu dron" alt="" coords="481,369,647,396"/>
+<area shape="rect" id="node21" href="$class_prism.html#a22c5467db5d960bddbaf9a52f55c55cb" title="Metoda obracajaca graniastoslup o zadany kat w 3D wokol srodka figury" alt="" coords="464,572,664,599"/>
+<area shape="rect" id="node24" href="$class_cuboid.html#a6c697c2d9b36a14c43c7328876d5a1f0" title="Metoda obracajaca prostopadloscian o zadany kat w 3D wokol srodka figury" alt="" coords="460,689,668,716"/>
+<area shape="rect" id="node27" href="$class_drone.html#aea963b77f42c204504542a3d9190d762" title="Metoda uzywana przy konstruowania drona Ustawia rotory w ten sposob, ze srodek ich dolnej podstawy je..." alt="" coords="487,623,641,665"/>
+<area shape="rect" id="node25" href="$class_cuboid.html#a3f6b1b9ea7de433af5b0d462d29f4272" title="Metoda przesuwajaca prostopadloscian o zadany kat w 3D" alt="" coords="753,740,899,767"/>
+<area shape="rect" id="node26" href="$class_cuboid.html#a42bdce7c214e759cb6ea94d4f547a5b9" title="Metoda przesuwajaca prostopadloscian do (0,0,0)" alt="" coords="735,689,917,716"/>
+<area shape="rect" id="node28" href="$class_cuboid.html#a99d30564d6129e6905c5333e04df9606" title="Metoda zwracajaca wierzcholki prostopadloscianu do Vector3D" alt="" coords="763,572,889,599"/>
+<area shape="rect" id="node29" href="$class_prism.html#a4e2b0b9c37d6a53af869522a4bf364ac" title="Metoda przesuwajaca graniastoslup o zadany wektor w 3D w taki sposob, ze srodek jego dolnej podstawy ..." alt="" coords="757,623,895,665"/>
+<area shape="rect" id="node31" href="$namespace_pz_g.html#aa010184f31b26bb561b42f22438b821e" title="Funkcja pomocnicza, dopisuje do polecenia wpisy związane z rysowaniem z pliku." alt="" coords="453,857,675,884"/>
+<area shape="rect" id="node32" href="$namespace_pz_g.html#a7227cb39c785b1c746b6bb5515c0b781" title="Dodaje do listy rysowanych punktów, punkty o różnych rozmiarach." alt="" coords="447,791,681,833"/>
+<area shape="rect" id="node33" href="$namespace_pz_g.html#a169c311f0e0b6ffadcd44e91e749f72d" title="Wczytuje z pliku listę punktów." alt="" coords="729,842,923,883"/>
+<area shape="rect" id="node34" href="$class_pz_g_1_1_atrybuty_rysowania.html#ab068535b4d2f755c394557d1da72a4eb" title="Zmienia kolor rysowania." alt="" coords="993,842,1175,883"/>
+<area shape="rect" id="node35" href="$class_pz_g_1_1_atrybuty_rysowania.html#af4b140eb03bc10b6fd816fad63f8372e" title="Zmienia rozmiar rysowania." alt="" coords="993,907,1175,949"/>
+<area shape="rect" id="node36" href="$class_pz_g_1_1_atrybuty_rysowania.html#a2ac97706124b14072715ecf3f07e82b4" title="Zmienia styl rysowania." alt="" coords="993,777,1175,818"/>
+<area shape="rect" id="node41" href="$class_pz_g_1_1_info_pliku_do_rysowania.html#a714aaa4c8e7bbd167ccbb1e797ca158c" title="Udostępia nazwę pliku do rysowania." alt="" coords="464,909,664,950"/>
+</map>

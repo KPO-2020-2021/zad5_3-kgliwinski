@@ -1,0 +1,9 @@
+<map id="Drone::Drone_change_to_sample" name="Drone::Drone_change_to_sample">
+<area shape="rect" id="node1" title="Metoda zamieniajaca drona na tego z pliku sample." alt="" coords="452,118,615,159"/>
+<area shape="rect" id="node2" href="$class_drone.html#a7eecbd031df9009e113d355a9dcdf4e1" title="Metoda obliczajaca i przeprowadzajaca caly ruch drona (obrot o kat i przelot z zadania 5...." alt="" coords="11,16,161,58"/>
+<area shape="rect" id="node3" href="$class_drone.html#a4abbed4a4cc52e5630f07f9129b46c5c" title="Metoda realizujaca ladowanie drona." alt="" coords="226,37,393,64"/>
+<area shape="rect" id="node4" href="$class_drone.html#aec9abadf85777ab20e361d1389aab466" title="Metoda obliczajaca i przeprowadzajaca koncowy ruch drona (obrot o kat i koncowy przelot z zadania 5...." alt="" coords="5,118,167,159"/>
+<area shape="rect" id="node5" href="$class_drone.html#af052f6bb793d1229b99b16b800b95b82" title="Metoda animujaca obrot drona i wyrysowujaca calosc w gnuplocie." alt="" coords="226,88,393,130"/>
+<area shape="rect" id="node6" href="$class_drone.html#ab7808296cec81143dbddd7516340a371" title="Metoda robiaca &quot;oblot&quot; drona wokol punktu (z modyfikacji)" alt="" coords="215,205,404,232"/>
+<area shape="rect" id="node7" href="$class_drone.html#a5fc9dd645ad3856b5d3c501c63c464e3" title="Metoda animujaca translacje drona i wyrysowujaca calosc w gnuplocie." alt="" coords="217,256,402,298"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Drone::get_pos" name="Drone::get_pos">
+<area shape="rect" id="node1" title="Zwraca pozycje srodka podstawy body" alt="" coords="5,5,125,32"/>
+<area shape="rect" id="node2" href="$class_cuboid.html#a0e7f901199262984ab6ba0da01d96c40" title="Metoda zwracajaca srodek podstawy ostroslupa" alt="" coords="173,5,359,32"/>
+</map>

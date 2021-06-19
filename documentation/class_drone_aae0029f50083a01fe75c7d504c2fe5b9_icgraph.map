@@ -1,0 +1,10 @@
+<map id="Drone::Print_to_files_drone" name="Drone::Print_to_files_drone">
+<area shape="rect" id="node1" title="Metoda zapisujaca parametry drona do plikow (do plikow final kazdego z elementow)" alt="" coords="669,157,823,198"/>
+<area shape="rect" id="node2" href="$class_drone.html#a7eecbd031df9009e113d355a9dcdf4e1" title="Metoda obliczajaca i przeprowadzajaca caly ruch drona (obrot o kat i przelot z zadania 5...." alt="" coords="11,82,161,124"/>
+<area shape="rect" id="node3" href="$class_drone.html#a4abbed4a4cc52e5630f07f9129b46c5c" title="Metoda realizujaca ladowanie drona." alt="" coords="226,31,393,58"/>
+<area shape="rect" id="node4" href="$class_drone.html#aec9abadf85777ab20e361d1389aab466" title="Metoda obliczajaca i przeprowadzajaca koncowy ruch drona (obrot o kat i koncowy przelot z zadania 5...." alt="" coords="5,192,167,233"/>
+<area shape="rect" id="node5" href="$class_drone.html#af052f6bb793d1229b99b16b800b95b82" title="Metoda animujaca obrot drona i wyrysowujaca calosc w gnuplocie." alt="" coords="226,82,393,124"/>
+<area shape="rect" id="node6" href="$class_drone.html#ab7808296cec81143dbddd7516340a371" title="Metoda robiaca &quot;oblot&quot; drona wokol punktu (z modyfikacji)" alt="" coords="215,250,404,276"/>
+<area shape="rect" id="node7" href="$class_drone.html#a5fc9dd645ad3856b5d3c501c63c464e3" title="Metoda animujaca translacje drona i wyrysowujaca calosc w gnuplocie." alt="" coords="217,301,402,342"/>
+<area shape="rect" id="node8" href="$class_drone.html#aedb04b80609b22ff4eb4a957bc149a48" title="Metoda animujaca obrot rotorow i zapisujaca to w plikach. Metoda sluzy jako metoda pomocnicza,..." alt="" coords="452,157,621,198"/>
+</map>

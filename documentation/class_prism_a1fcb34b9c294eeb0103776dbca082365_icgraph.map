@@ -1,0 +1,7 @@
+<map id="Prism::get_basis_centre" name="Prism::get_basis_centre">
+<area shape="rect" id="node1" title="Metoda zwracajaca srodek podstawy ostroslupa" alt="" coords="431,56,608,83"/>
+<area shape="rect" id="node2" href="$class_drone.html#ac594f008df2186167f0a6293288ccbea" title="Methoda sprawdzajaca czy rzutowanie drona na plaszczyzne XY &#160;&#160;przecina sie z rzutowaniem granistoslup..." alt="" coords="192,5,383,32"/>
+<area shape="rect" id="node3" href="$class_prism.html#acdbef3f647d4cb196aff468f43382ac5" title="Zwraca pozycje obiektu do Vector3D" alt="" coords="228,56,347,83"/>
+<area shape="rect" id="node5" href="$class_prism.html#a3e4405a0c5bbbfa00effdca79c81106a" title="Wypisuje pozycje (x,y) obiektu" alt="" coords="224,107,351,133"/>
+<area shape="rect" id="node4" href="$class_prism.html#a8a80c4334810ad934e6e43bb5ee14f07" title="Zmiana pozycji obiektu na plaszczyznie XY na nowe wspolrzedne." alt="" coords="5,56,144,83"/>
+</map>

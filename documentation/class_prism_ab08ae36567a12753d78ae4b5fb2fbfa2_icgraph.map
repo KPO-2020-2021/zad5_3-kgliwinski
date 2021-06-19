@@ -1,0 +1,11 @@
+<map id="Prism::get_basis_diagonal_len" name="Prism::get_basis_diagonal_len">
+<area shape="rect" id="node1" title="Metoda zwracajaca dlugosc przekatnej podstawy prostopadloscianu" alt="" coords="1395,31,1613,57"/>
+<area shape="rect" id="node2" href="$class_drone.html#ac594f008df2186167f0a6293288ccbea" title="Methoda sprawdzajaca czy rzutowanie drona na plaszczyzne XY &#160;&#160;przecina sie z rzutowaniem granistoslup..." alt="" coords="1156,5,1347,32"/>
+<area shape="rect" id="node3" href="$class_drone.html#ab0684fb71c2da878193af0f27a44d276" title="Zwraca promien okregu rzutowany przez dron na plaszczyzne XY" alt="" coords="1161,56,1342,83"/>
+<area shape="rect" id="node4" href="$class_drone.html#a5369b8139325f0f8d7eb0a7db7c684cd" title="Methoda sprawdzajaca czy rzutowanie drona na plaszczyzne XY &#160;&#160;przecina sie z rzutowaniem prostopadlos..." alt="" coords="917,56,1108,83"/>
+<area shape="rect" id="node5" href="$class_scene.html#a1e55ef9fe4c36aea7cbc9304b18271cc" title="Sprawdza czy jakis objekt koliduje z dronem jesli ten mialby wyladowac w danym miejscu" alt="" coords="708,49,869,90"/>
+<area shape="rect" id="node6" href="$class_scene.html#a5fb0b9741a75dec929b5ea5d6ac917a1" title="Przelot aktywnego drona." alt="" coords="384,56,469,83"/>
+<area shape="rect" id="node9" href="$class_scene.html#aa5fc0e5a94bfa0766f6e5ff10993630d" title="Skanowanie powierzchni pod dronem, gdy dron nie moze wyladowac w danym miejscu &#160;&#160;Rysowany jest rownie..." alt="" coords="517,81,660,108"/>
+<area shape="rect" id="node7" href="$class_menu.html#acd338552222b744cd030e17776cb5d9b" title="Obsluguje wybor menu." alt="" coords="184,56,336,83"/>
+<area shape="rect" id="node8" href="$class_menu.html#af7e6a49bd56499facef9cc98561ea169" title="Inicjuje i obsluguje menu." alt="" coords="5,56,136,83"/>
+</map>

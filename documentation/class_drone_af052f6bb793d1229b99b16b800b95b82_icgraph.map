@@ -1,0 +1,5 @@
+<map id="Drone::Drone_rotation_animation" name="Drone::Drone_rotation_animation">
+<area shape="rect" id="node1" title="Metoda animujaca obrot drona i wyrysowujaca calosc w gnuplocie." alt="" coords="215,39,381,80"/>
+<area shape="rect" id="node2" href="$class_drone.html#a7eecbd031df9009e113d355a9dcdf4e1" title="Metoda obliczajaca i przeprowadzajaca caly ruch drona (obrot o kat i przelot z zadania 5...." alt="" coords="11,5,161,47"/>
+<area shape="rect" id="node3" href="$class_drone.html#aec9abadf85777ab20e361d1389aab466" title="Metoda obliczajaca i przeprowadzajaca koncowy ruch drona (obrot o kat i koncowy przelot z zadania 5...." alt="" coords="5,71,167,112"/>
+</map>

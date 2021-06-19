@@ -1,0 +1,10 @@
+<map id="Drone::check_intersection" name="Drone::check_intersection">
+<area shape="rect" id="node1" title="Methoda sprawdzajaca czy rzutowanie drona na plaszczyzne XY &#160;&#160;przecina sie z rzutowaniem granistoslup..." alt="" coords="5,81,196,108"/>
+<area shape="rect" id="node2" href="$class_prism.html#a1fcb34b9c294eeb0103776dbca082365" title="Metoda zwracajaca srodek podstawy ostroslupa" alt="" coords="246,5,423,32"/>
+<area shape="rect" id="node3" href="$class_prism.html#ab08ae36567a12753d78ae4b5fb2fbfa2" title="Metoda zwracajaca dlugosc przekatnej podstawy prostopadloscianu" alt="" coords="477,56,696,83"/>
+<area shape="rect" id="node4" href="$class_drone.html#ab0684fb71c2da878193af0f27a44d276" title="Zwraca promien okregu rzutowany przez dron na plaszczyzne XY" alt="" coords="244,107,425,133"/>
+<area shape="rect" id="node7" href="$class_drone.html#ab717196d8d03bde942a75d1f693fe362" title="Zwraca rzutowanie pozycje srodka podstawy body na XY" alt="" coords="261,157,409,184"/>
+<area shape="rect" id="node5" href="$class_cuboid.html#a79e4e3337e02d8f8a757561cedbdb71f" title="Metoda zwracajaca dlugosc przekatnej podstawy prostopadloscianu" alt="" coords="473,107,700,133"/>
+<area shape="rect" id="node6" href="$class_cuboid.html#a0e7f901199262984ab6ba0da01d96c40" title="Metoda zwracajaca srodek podstawy ostroslupa" alt="" coords="748,132,933,159"/>
+<area shape="rect" id="node8" href="$class_drone.html#abf6bc328fea7ec556e5a23ca37cf6d8e" title="Zwraca pozycje srodka podstawy body" alt="" coords="527,157,647,184"/>
+</map>

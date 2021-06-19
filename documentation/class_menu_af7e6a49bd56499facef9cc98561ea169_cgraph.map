@@ -1,0 +1,72 @@
+<map id="Menu::init_menu" name="Menu::init_menu">
+<area shape="rect" id="node1" title="Inicjuje i obsluguje menu." alt="" coords="5,575,136,601"/>
+<area shape="rect" id="node2" href="$class_scene.html#a1b2c4320032cf6319a6840ac865774db" title="Metoda sprawdzajaca poprawnosc inicjacji sceny." alt="" coords="184,448,336,475"/>
+<area shape="rect" id="node3" href="$class_scene.html#ab57c9a7293ccbaf3dd7e9ac469a7a787" title="Metoda inicjalizujaca lacze do gnuplota." alt="" coords="406,296,553,323"/>
+<area shape="rect" id="node13" href="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#a065f5b8402737cc62b0ad4f66d028335" title="Generuje polecenie rysowania i przesyła je do gnuplota." alt="" coords="873,633,1047,674"/>
+<area shape="rect" id="node24" href="$class_scene.html#a22b1902bbd3a21c3fc62251c123a8407" title="Wypisuje polozenie aktywnego drona." alt="" coords="406,600,553,627"/>
+<area shape="rect" id="node25" href="$class_menu.html#ad19260a43743fc13dbb67e71c97f3ccd" title="Wyswietla menu." alt="" coords="407,1240,551,1267"/>
+<area shape="rect" id="node26" href="$class_menu.html#acd338552222b744cd030e17776cb5d9b" title="Obsluguje wybor menu." alt="" coords="184,895,336,921"/>
+<area shape="rect" id="node4" href="$class_scene.html#a15f741d7de1a9662c49f72d663d90b23" title="Metoda dodajaca podstawowe elementy do listy objects." alt="" coords="623,5,811,32"/>
+<area shape="rect" id="node7" href="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#aa815ce8ec16e12fc246cf422e562869e" title="Dodaje nazwę pliku." alt="" coords="873,526,1047,567"/>
+<area shape="rect" id="node9" href="$class_scene.html#a3df6df98446d73c08274275ae036d4ad" title="Metoda inicjujaca liste objects, dodajaca drony do listy." alt="" coords="645,56,789,83"/>
+<area shape="rect" id="node10" href="$class_scene.html#a904ed1e89f26c05070e221bc832e9a2f" title="Metoda iterujaca po kolejnych polach listy objects, zczytujaca nazwy plikow i podajaca je do gnuplota..." alt="" coords="643,223,791,265"/>
+<area shape="rect" id="node12" href="$class_plane.html#a81d5efe26f20d8939f6e32f5f288bed9" title="Metoda tworzy plaszczyzne z podanych zakresow." alt="" coords="644,107,789,133"/>
+<area shape="rect" id="node20" href="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#a9c91987dfc869d6fcea96205c581daef" title="Ustawia zakres osi OX." alt="" coords="630,158,803,199"/>
+<area shape="rect" id="node21" href="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#a54c6e9cf9ab2eae479451fd953c2717c" title="Ustawia zakres osi OY." alt="" coords="630,289,803,330"/>
+<area shape="rect" id="node22" href="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#a1dbbb2b86fb13b8632e6bad9df2a82e3" title="Ustawia zakres osi OZ." alt="" coords="630,354,803,395"/>
+<area shape="rect" id="node23" href="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#ae92c65357bf682478cc68f77885b61d8" title="Zmienia tryb rysowania." alt="" coords="630,419,803,461"/>
+<area shape="rect" id="node5" href="$class_scene.html#a16da566304f4ed4228fa89af25e330e5" title="Metoda dodajaca prostopadloscian, ostroslup lub Triangular do listy objects." alt="" coords="872,297,1048,338"/>
+<area shape="rect" id="node6" href="$class_scene.html#a684bec8db49b527c34a567e91259102e" title="Metoda dodajaca obiekt pochodny z Prism do listy objects." alt="" coords="872,391,1048,433"/>
+<area shape="rect" id="node8" href="$namespace_pz_g.html#ae1aad0c681853d7e47da4cdfccefc102" title="Funkcja pomocnicza, sprawdza czy plik o podanej nazwie jest na dysku." alt="" coords="1163,533,1290,560"/>
+<area shape="rect" id="node11" href="$class_scene.html#afdc407539e8e1c50d5ccd93b9b60ed52" title="Metoda sprawdzajaca i zwracajaca rozmiar listy objects." alt="" coords="871,231,1049,257"/>
+<area shape="rect" id="node14" href="$namespace_pz_g.html#aa010184f31b26bb561b42f22438b821e" title="Funkcja pomocnicza, dopisuje do polecenia wpisy związane z rysowaniem z pliku." alt="" coords="1116,651,1337,677"/>
+<area shape="rect" id="node15" href="$namespace_pz_g.html#a7227cb39c785b1c746b6bb5515c0b781" title="Dodaje do listy rysowanych punktów, punkty o różnych rozmiarach." alt="" coords="1109,585,1344,626"/>
+<area shape="rect" id="node16" href="$namespace_pz_g.html#a169c311f0e0b6ffadcd44e91e749f72d" title="Wczytuje z pliku listę punktów." alt="" coords="1392,585,1585,626"/>
+<area shape="rect" id="node17" href="$class_pz_g_1_1_atrybuty_rysowania.html#ab068535b4d2f755c394557d1da72a4eb" title="Zmienia kolor rysowania." alt="" coords="1655,519,1838,561"/>
+<area shape="rect" id="node18" href="$class_pz_g_1_1_atrybuty_rysowania.html#af4b140eb03bc10b6fd816fad63f8372e" title="Zmienia rozmiar rysowania." alt="" coords="1655,585,1838,626"/>
+<area shape="rect" id="node19" href="$class_pz_g_1_1_atrybuty_rysowania.html#a2ac97706124b14072715ecf3f07e82b4" title="Zmienia styl rysowania." alt="" coords="1655,650,1838,691"/>
+<area shape="rect" id="node27" href="$class_scene.html#a8b87eec51d554a3ac01767a613871661" title="Metoda dodajaca object zadany przez uzytkownika." alt="" coords="647,485,787,512"/>
+<area shape="rect" id="node30" href="$class_scene.html#a87ef7448b3e6e883460ba41ef590f24f" title="Metoda pozwalajaca na wybor aktywnego drona." alt="" coords="400,920,559,947"/>
+<area shape="rect" id="node31" href="$class_scene.html#aa86f467ff8da149dac89813f90b1ee18" title="Metoda usuwajaca object zadany przez uzytkownika." alt="" coords="638,869,795,896"/>
+<area shape="rect" id="node34" href="$class_scene.html#aab860a02928d5e846254848e5e72408a" title="Usuwa pliki ktore jeszcze pozostaly w liscie objects oraz plik z plansza." alt="" coords="402,1022,557,1063"/>
+<area shape="rect" id="node35" href="$class_scene.html#a5fb0b9741a75dec929b5ea5d6ac917a1" title="Przelot aktywnego drona." alt="" coords="437,971,522,997"/>
+<area shape="rect" id="node66" href="$class_scene.html#a2a51a641e755111d4a0574ba721dddc3" title="Przelot aktywnego drona." alt="" coords="396,1088,563,1115"/>
+<area shape="rect" id="node67" href="$class_scene.html#a9bb896991e516390c4464cdc92352d00" title="Wypisuje polozenia dronow." alt="" coords="397,1139,562,1165"/>
+<area shape="rect" id="node68" href="$class_scene.html#aa84e36109f9a376fbe8df80a8bf5aef2" title="Wyswietla aktywne elementy sceny wyboru obiektu." alt="" coords="394,1189,565,1216"/>
+<area shape="rect" id="node69" href="$class_menu.html#a022cc02d478e530e552a31198e96f4c6" title="Wyswietla menu wyboru obiektu." alt="" coords="384,701,575,728"/>
+<area shape="rect" id="node70" href="$class_scene.html#a9bb026530396c432320078ed6c513eab" title="Metoda zmieniajaca pozycje wybranego przez uzytkownika elementu sceny." alt="" coords="400,753,559,794"/>
+<area shape="rect" id="node28" href="$class_scene.html#a0e6e9771175c23c6ed78a493ed6d8e63" title="Metoda tworzaca nazwy programow, uzywana przy dodawaniu obiektow sceny." alt="" coords="869,475,1051,501"/>
+<area shape="rect" id="node29" href="$class_scene.html#a2724c6aee793b0deb0d58a990ab16832" title="Metoda uzywana w switchu metody create_filenames. Sluzy do tworzenia pliku o odpowiedniej nazwie." alt="" coords="1147,467,1306,509"/>
+<area shape="rect" id="node32" href="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#a7fa4e775e1aee74869fae174c567c2a6" title="Usuwa z listy nazw plików z danymi do rysowania usuwa wybraną nazwę." alt="" coords="873,702,1047,743"/>
+<area shape="rect" id="node33" href="$class_pz_g_1_1_info_pliku_do_rysowania.html#a714aaa4c8e7bbd167ccbb1e797ca158c" title="Udostępia nazwę pliku do rysowania." alt="" coords="1127,702,1327,743"/>
+<area shape="rect" id="node36" href="$class_scene.html#a1e55ef9fe4c36aea7cbc9304b18271cc" title="Sprawdza czy jakis objekt koliduje z dronem jesli ten mialby wyladowac w danym miejscu" alt="" coords="879,1225,1041,1266"/>
+<area shape="rect" id="node48" href="$class_scene.html#aa5fc0e5a94bfa0766f6e5ff10993630d" title="Skanowanie powierzchni pod dronem, gdy dron nie moze wyladowac w danym miejscu &#160;&#160;Rysowany jest rownie..." alt="" coords="645,945,788,972"/>
+<area shape="rect" id="node37" href="$class_drone.html#a5369b8139325f0f8d7eb0a7db7c684cd" title="Methoda sprawdzajaca czy rzutowanie drona na plaszczyzne XY &#160;&#160;przecina sie z rzutowaniem prostopadlos..." alt="" coords="1131,1341,1322,1368"/>
+<area shape="rect" id="node38" href="$class_drone.html#a0a57fc27f1cfacca5172426c15749b75" title="Methoda powieksza rzutowana figure o radius w odpowiedni sposob." alt="" coords="1400,1291,1577,1317"/>
+<area shape="rect" id="node39" href="$class_cuboid.html#a215319dead51277df1c35673c1eb29b3" title="Metoda zwracajaca wierzcholki podstawy prostopadloscianu zrzutowane na plaszczyzne XY do tablicy" alt="" coords="1406,1341,1571,1368"/>
+<area shape="rect" id="node40" href="$class_drone.html#ab0684fb71c2da878193af0f27a44d276" title="Zwraca promien okregu rzutowany przez dron na plaszczyzne XY" alt="" coords="1398,1443,1579,1469"/>
+<area shape="rect" id="node44" href="$class_drone.html#ab717196d8d03bde942a75d1f693fe362" title="Zwraca rzutowanie pozycje srodka podstawy body na XY" alt="" coords="1415,1392,1563,1419"/>
+<area shape="rect" id="node46" href="$class_drone.html#a0920ad155e2877898f21a038d68e96f9" title="Methoda sprawdza czy punkt 0,0,0 miesci sie w powiekszonym przez metode &#160;&#160;enlargen_by_rad obszarze w ..." alt="" coords="1415,1493,1562,1520"/>
+<area shape="rect" id="node47" href="$class_drone.html#a8e86dfee9cdbdc1d2791ad51d1212517" title="Methoda uzywana przy check_intersection() przesuwajaca i rotujaca caly uklad." alt="" coords="1403,1225,1575,1266"/>
+<area shape="rect" id="node41" href="$class_prism.html#ab08ae36567a12753d78ae4b5fb2fbfa2" title="Metoda zwracajaca dlugosc przekatnej podstawy prostopadloscianu" alt="" coords="1637,1443,1856,1469"/>
+<area shape="rect" id="node42" href="$class_cuboid.html#a79e4e3337e02d8f8a757561cedbdb71f" title="Metoda zwracajaca dlugosc przekatnej podstawy prostopadloscianu" alt="" coords="1633,1493,1860,1520"/>
+<area shape="rect" id="node43" href="$class_cuboid.html#a0e7f901199262984ab6ba0da01d96c40" title="Metoda zwracajaca srodek podstawy ostroslupa" alt="" coords="1908,1443,2093,1469"/>
+<area shape="rect" id="node45" href="$class_drone.html#abf6bc328fea7ec556e5a23ca37cf6d8e" title="Zwraca pozycje srodka podstawy body" alt="" coords="1687,1392,1807,1419"/>
+<area shape="rect" id="node49" href="$class_block.html#aeef4dd3716afaea42688a4f96456ce27" title="Metoda zwracajaca nazwe pliku z finalna (robocza) bryla" alt="" coords="877,971,1043,997"/>
+<area shape="rect" id="node50" href="$class_drone.html#ac8dedb6cf49bdb580df253e3a90d3637" title="Metoda zwracajaca orientacje drona" alt="" coords="895,1021,1025,1048"/>
+<area shape="rect" id="node51" href="$class_prism.html#a2de0dab6d117fc3c8dcbc3c384d0fccd" title=" " alt="" coords="883,1072,1037,1099"/>
+<area shape="rect" id="node53" href="$class_drone.html#ad42bc54902df967b94717617aca1a974" title="Metoda obracajaca dron o zadany kat w 3D wokol srodka figury" alt="" coords="859,869,1061,896"/>
+<area shape="rect" id="node55" href="$class_prism.html#ade146d341c0468030f8c1258b7fe1041" title="Metoda przesuwajaca graniastoslup o zadany wektor w 3D" alt="" coords="1678,963,1815,989"/>
+<area shape="rect" id="node56" href="$class_prism.html#afed2c26932d5cb152fd620d2acbfbc3e" title="Metoda przesuwajaca graniastoslup do srodka ukladu wspolrzednych (tak, ze srodek graniastoslupa pokry..." alt="" coords="1401,803,1576,829"/>
+<area shape="rect" id="node63" href="$class_prism.html#a07f15c416c9f9c54390bb8737b441a35" title="Metoda skalujaca o wektor scale bedacy czlonkiem klasy block" alt="" coords="1164,768,1289,795"/>
+<area shape="rect" id="node64" href="$class_block.html#adb6acd13e2ab79cf7e4733ca2d6ae166" title="Metoda zapisujaca do klasy wektor reprezentujacy skale" alt="" coords="897,920,1023,947"/>
+<area shape="rect" id="node65" href="$class_drone.html#a9684cd7ce04b7e6191f3d6b3a745370b" title="Przesuwa drona o zadany wektor w 3D" alt="" coords="1157,1123,1296,1149"/>
+<area shape="rect" id="node52" href="$class_prism.html#a764c6940e4fb65303981e8b877b28561" title="Metoda wypisania odpowiednich wierzcholkow do pliku zgodnie z zaproponowanym sposobem zadaniu dron" alt="" coords="1143,1072,1310,1099"/>
+<area shape="rect" id="node54" href="$class_prism.html#a22c5467db5d960bddbaf9a52f55c55cb" title="Metoda obracajaca graniastoslup o zadany kat w 3D wokol srodka figury" alt="" coords="1127,869,1327,896"/>
+<area shape="rect" id="node57" href="$class_cuboid.html#a6c697c2d9b36a14c43c7328876d5a1f0" title="Metoda obracajaca prostopadloscian o zadany kat w 3D wokol srodka figury" alt="" coords="1123,1021,1331,1048"/>
+<area shape="rect" id="node60" href="$class_drone.html#aea963b77f42c204504542a3d9190d762" title="Metoda uzywana przy konstruowania drona Ustawia rotory w ten sposob, ze srodek ich dolnej podstawy je..." alt="" coords="1150,921,1303,962"/>
+<area shape="rect" id="node58" href="$class_cuboid.html#a3f6b1b9ea7de433af5b0d462d29f4272" title="Metoda przesuwajaca prostopadloscian o zadany kat w 3D" alt="" coords="1416,1072,1561,1099"/>
+<area shape="rect" id="node59" href="$class_cuboid.html#a42bdce7c214e759cb6ea94d4f547a5b9" title="Metoda przesuwajaca prostopadloscian do (0,0,0)" alt="" coords="1397,1021,1580,1048"/>
+<area shape="rect" id="node61" href="$class_cuboid.html#a99d30564d6129e6905c5333e04df9606" title="Metoda zwracajaca wierzcholki prostopadloscianu do Vector3D" alt="" coords="1425,904,1552,931"/>
+<area shape="rect" id="node62" href="$class_prism.html#a4e2b0b9c37d6a53af869522a4bf364ac" title="Metoda przesuwajaca graniastoslup o zadany wektor w 3D w taki sposob, ze srodek jego dolnej podstawy ..." alt="" coords="1420,955,1557,997"/>
+</map>

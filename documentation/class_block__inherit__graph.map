@@ -1,0 +1,12 @@
+<map id="Block" name="Block">
+<area shape="rect" id="node1" title="Opisuje figure geometryczna w przestrzeni trojwymiarowej." alt="" coords="425,5,592,361"/>
+<area shape="rect" id="node2" href="$class_cuboid.html" title="Opisuje prostopadloscian w przestrzeni trojwymiarowej." alt="" coords="57,512,256,1161"/>
+<area shape="rect" id="node5" href="$class_drone.html" title="Opisuje drona o prostopadlosciennym korpusie i 4 rotorach." alt="" coords="280,409,527,1264"/>
+<area shape="rect" id="node6" href="$class_plane.html" title="Opisuje plaska powierzchnie w 3D reprezentujaca powierzchnie marsa, plasczyzna docelowo rysuje sie w ..." alt="" coords="551,769,679,905"/>
+<area shape="rect" id="node7" href="$class_prism.html" title="Opisuje graniastoslup o dwunastu wierzcholkach w przestrzeni trojwymiarowej." alt="" coords="703,541,914,1132"/>
+<area shape="rect" id="node3" href="$class_pyramid.html" title="Opisuje ostroslup o podstawie prostokatnej w przestrzeni trojmwymiarowej Jest klasa dziedziczaca z kl..." alt="" coords="5,1312,145,1492"/>
+<area shape="rect" id="node4" href="$class_triangular.html" title="Opisuje graniastoslup o podstawie trojkatnej w przestrzeni trojwymiarowej Jest klasa dziedziczaca z k..." alt="" coords="169,1327,309,1477"/>
+<area shape="rect" id="node8" href="$class_circus.html" title="Opisuje graniastoslup szesciokatny o podwyzszonym srodku gornej podstawy. Jest klasa dziedziczaca z k..." alt="" coords="575,1327,715,1477"/>
+<area shape="rect" id="node9" href="$class_tent.html" title="Opisuje ostroslup szesciokatny prawidlowy (moze miec nieregularna podstawe) Jest klasa dziedziczaca z..." alt="" coords="739,1312,879,1492"/>
+<area shape="rect" id="node10" href="$class_volcano.html" title="Opisuje graniastoslup szesciokatny o podwyzszonym srodku gornej podstawy. Jest klasa dziedziczaca z k..." alt="" coords="903,1312,1043,1492"/>
+</map>

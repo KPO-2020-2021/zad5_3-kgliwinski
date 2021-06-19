@@ -1,0 +1,13 @@
+<map id="Block" name="Block">
+<area shape="rect" id="node1" title="Opisuje figure geometryczna w przestrzeni trojwymiarowej." alt="" coords="294,1527,461,1853"/>
+<area shape="rect" id="node2" href="$class_vector.html" title=" " alt="" coords="235,1064,389,1449"/>
+<area shape="rect" id="node3" href="$class_count.html" title=" " alt="" coords="5,388,184,553"/>
+<area shape="rect" id="node4" title=" " alt="" coords="53,5,91,83"/>
+<area shape="rect" id="node5" href="$class_count.html" title="Pozwala na liczenie instancji stworzonych obiektow." alt="" coords="189,160,309,311"/>
+<area shape="rect" id="node8" href="$class_count.html" title=" " alt="" coords="230,388,394,553"/>
+<area shape="rect" id="node6" title=" " alt="" coords="416,770,483,847"/>
+<area shape="rect" id="node7" href="$class_vector.html" title="Opisuje wektor o SIZE&#45;wierszach." alt="" coords="233,616,391,1001"/>
+<area shape="rect" id="node9" href="$classstatic_01int.html" title=" " alt="" coords="475,197,554,274"/>
+<area shape="rect" id="node10" title=" " alt="" coords="419,432,469,509"/>
+<area shape="rect" id="node11" title=" " alt="" coords="413,1218,472,1295"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Drone::remove_files" name="Drone::remove_files">
+<area shape="rect" id="node1" title="Metoda usuwajaca pliki drona." alt="" coords="5,31,159,57"/>
+<area shape="rect" id="node2" href="$class_block.html#aeef4dd3716afaea42688a4f96456ce27" title="Metoda zwracajaca nazwe pliku z finalna (robocza) bryla" alt="" coords="217,5,383,32"/>
+<area shape="rect" id="node3" href="$class_block.html#aed17e0cb13b8eea50fe735ba05204da9" title="Metoda zwracajaca nazwe pliku z wzorcowa bryla" alt="" coords="207,56,393,83"/>
+</map>

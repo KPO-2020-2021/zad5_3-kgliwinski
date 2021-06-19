@@ -1,0 +1,4 @@
+<map id="Drone::Drone_update_path" name="Drone::Drone_update_path">
+<area shape="rect" id="node1" title="Metoda aktualizujaca sciezke drona w przypadku braku mozliwosci ladowania w okreslonym miejscu." alt="" coords="215,13,411,39"/>
+<area shape="rect" id="node2" href="$class_drone.html#aec9abadf85777ab20e361d1389aab466" title="Metoda obliczajaca i przeprowadzajaca koncowy ruch drona (obrot o kat i koncowy przelot z zadania 5...." alt="" coords="5,5,167,47"/>
+</map>

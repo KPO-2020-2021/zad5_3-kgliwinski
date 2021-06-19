@@ -1,0 +1,8 @@
+<map id="Drone::get_orien" name="Drone::get_orien">
+<area shape="rect" id="node1" title="Metoda zwracajaca orientacje drona" alt="" coords="727,42,857,69"/>
+<area shape="rect" id="node2" href="$class_drone.html#aec9abadf85777ab20e361d1389aab466" title="Metoda obliczajaca i przeprowadzajaca koncowy ruch drona (obrot o kat i koncowy przelot z zadania 5...." alt="" coords="517,5,679,47"/>
+<area shape="rect" id="node3" href="$class_scene.html#aa5fc0e5a94bfa0766f6e5ff10993630d" title="Skanowanie powierzchni pod dronem, gdy dron nie moze wyladowac w danym miejscu &#160;&#160;Rysowany jest rownie..." alt="" coords="527,71,669,98"/>
+<area shape="rect" id="node4" href="$class_scene.html#a5fb0b9741a75dec929b5ea5d6ac917a1" title="Przelot aktywnego drona." alt="" coords="384,71,469,98"/>
+<area shape="rect" id="node5" href="$class_menu.html#acd338552222b744cd030e17776cb5d9b" title="Obsluguje wybor menu." alt="" coords="184,71,336,98"/>
+<area shape="rect" id="node6" href="$class_menu.html#af7e6a49bd56499facef9cc98561ea169" title="Inicjuje i obsluguje menu." alt="" coords="5,71,136,98"/>
+</map>
