@@ -71,6 +71,9 @@ It is important for the program to work that there is a datasets directory (that
 |              |---sample
 ```
 
+# Informacja dla Pana Prowadzącego
+Przy ocenie kursu proszę zwrócić uwagę, że ukończyłem ścieżkę Python Programming na datacamp, jako jedno z dodatkowych zadań całosemestralnych.
+
 # Informacje w kontekście zadania dron 5.3
 Zawarte informacje o zrealizowanych rozszerzeniach i ogólnej funkcjonalności programu w kontekście zadania projektowego.
 
